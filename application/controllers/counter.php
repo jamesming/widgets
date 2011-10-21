@@ -58,7 +58,7 @@ class Counter extends CI_Controller {
 	}
 	
 	
-	public function get_unique_page_views(){
+	public function get_unique_views(){
 		
 		$counts = $this->my_database_model->select_from_table( 
 			$table = 'page_views', 
