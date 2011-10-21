@@ -32,9 +32,16 @@ font-size:30px;
 		<tr>
 			<td>Unique Visitors
 			</td>
-			<td id='page_views_div'>
+			<td id='unique_views_td'>
 			</td>
 		</tr>
+		<tr>
+			<td>Total Visitors
+			</td>
+			<td id='total_views_td'>
+			</td>
+		</tr>		
+		
 	</table>
 </div>
 
@@ -45,12 +52,17 @@ font-size:30px;
 $(document).ready(function() {
 	
 		setInterval(function (){
-				$.post("<?php echo base_url() ?>index.php/counter/get_unique_page_views",{
+			
+				$.post("<?php echo base_url() ?>index.php/counter/get_unique_unique_views",{
 				},function(data) {
-		
-					$('#page_views_div').text(data)
-				
+					$('#unique_views_td').text(data)
 				});	
+				
+				$.post("<?php echo base_url() ?>index.php/counter/get_total_page_views",{
+				},function(data) {
+					$('#total_views_td').text(data)
+				});					
+				
 		}, 1000)
 
 	

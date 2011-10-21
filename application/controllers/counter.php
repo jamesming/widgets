@@ -73,7 +73,21 @@ class Counter extends CI_Controller {
 		echo count($counts);
 		
 	}
-	
+	public function get_total_page_views(){
+		
+		$counts = $this->my_database_model->select_from_table( 
+			$table = 'page_views', 
+			$select_what = 'SUM( count ) AS sum', 
+			$where_array = array(), 
+			$use_order = TRUE, 
+			$order_field = 'created', 
+			$order_direction = 'desc',
+			$limit = -1
+			);		
+		
+		echo $counts->sum;
+		
+	}	
 }
 /* End of file main.php */
 /* Location: ./application/controllers/counter.php */
