@@ -5,15 +5,17 @@
 <?php     	$this->load->view('header/common_css.php');  ?>
 <style>
 table{
+margin-top:50px;
+margin-left:50px;
 border-top:	1px solid black;
 border-left:1px solid black;
 }
 table td{
 border-right:1px solid black;
-border-bottom:1px solid black;	
+border-bottom:1px solid black;
+font-size:30px;	
 }
 #page_views_div{
-	font-size:50px;
 	color:black;
 	text-align:center;
 		
