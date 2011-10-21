@@ -31,6 +31,7 @@ class Counter extends CI_Controller {
 	
 						$this->custom->insert_page_views( 
 							array(
+								'table' => 'page_views',
 								'ip_address' => $geo_array[2],
 								'country' => $geo_array[4],
 								'state' => $geo_array[5],

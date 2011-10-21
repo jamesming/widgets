@@ -34,7 +34,7 @@ function custom(){
 	 
 	function insert_page_views( $the_array ){		
 		
-		$table = 'page_views';
+		$table = $the_array['table'];
 		
 	  $where_array = array('ip_address' => $the_array['ip_address']);
 
