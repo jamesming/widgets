@@ -6,7 +6,7 @@ class Counter extends CI_Controller {
    public function __construct(){
         parent::__construct();
         
-
+				$this->time = time();
 
 
    }
@@ -60,10 +60,14 @@ class Counter extends CI_Controller {
 	
 	public function get_unique_views(){
 		
+
+		
 		$counts = $this->my_database_model->select_from_table( 
 			$table = 'page_views', 
 			$select_what = '*', 
-			$where_array = array(), 
+			$where_array = array(
+				'created' => date("Y").'-'.date("m").'-'.date('j', $this->time)
+			), 
 			$use_order = TRUE, 
 			$order_field = 'created', 
 			$order_direction = 'desc',
@@ -78,7 +82,9 @@ class Counter extends CI_Controller {
 		$counts = $this->my_database_model->select_from_table( 
 			$table = 'page_views', 
 			$select_what = 'SUM( count ) AS sum', 
-			$where_array = array(), 
+			$where_array = array(
+				'created' => date("Y").'-'.date("m").'-'.date('j', $this->time)
+			),  
 			$use_order = TRUE, 
 			$order_field = 'created', 
 			$order_direction = 'desc',
