@@ -19,10 +19,12 @@
 $urlParts = explode('.', $_SERVER['HTTP_HOST']);
 $subdomain = $urlParts[0];		
 
-
-
-if( $_SERVER['HTTP_HOST'] == 'cms.mynuvotv.com' ){
-	$config['base_url']	= "http://cms.mynuvotv.com";	
+if( $_SERVER['HTTP_HOST'] == 'api.mynuvotv.com' ){
+	$config['base_url']	= "http://api.mynuvotv.com";	
+}elseif( $_SERVER['HTTP_HOST'] == 'counter.mynuvotv.com' ){
+	$config['base_url']	= "http://counter.mynuvotv.com";	
+}elseif( $_SERVER['HTTP_HOST'] == 'polls.mynuvotv.com' ){
+	$config['base_url']	= "http://polls.mynuvotv.com";	
 }elseif( $_SERVER['HTTP_HOST'] == 'localhost' ){
 	$config['base_url']	= "http://localhost/cms";
 };
