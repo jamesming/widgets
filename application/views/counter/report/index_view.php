@@ -6,11 +6,11 @@
 <style>
 #logo_div{
 width:800px;	
-margin-top:10px;
+margin-top:30px;
 }
 table{
 width:700px;
-margin-top:10px;
+margin-top:20px;
 margin-left:50px;
 border-top:	1px solid black;
 border-left:1px solid black;
