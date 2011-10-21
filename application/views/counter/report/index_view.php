@@ -24,9 +24,10 @@ font-size:30px;
 }
 div#list_div{
 	overflow:auto;
-	height:500px;
+	height:300px;
+	width:720px;
 }
-table #list_table td{
+table#list_table td{
 	font-size:12px;
 }
 </style>
