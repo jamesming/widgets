@@ -85,7 +85,7 @@ class Counter extends CI_Controller {
 			$limit = -1
 			);		
 		
-		echo $counts->sum;
+		echo $counts[0]->sum;
 		
 	}	
 }
