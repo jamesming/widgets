@@ -127,7 +127,7 @@ class Counter extends CI_Controller {
 		
 	}	
 	
-	public function get_adbuys_views(){
+	public function get_unique_adbuys_views(){
 		
 		
 		$counts = $this->my_database_model->select_from_table( 
@@ -143,6 +143,25 @@ class Counter extends CI_Controller {
 			);		
 		
 		echo count($counts);
+		
+	}	
+
+
+	public function get_total_adbuy_views(){
+		
+		$counts = $this->my_database_model->select_from_table( 
+			$table = 'page_views_adbuys', 
+			$select_what = 'SUM( count ) AS sum', 
+			$where_array = array(
+				'created like' => '%'.date("Y").'-'.date("m").'-'.date('j', $this->time).'%'
+			), 
+			$use_order = TRUE, 
+			$order_field = 'created', 
+			$order_direction = 'desc',
+			$limit = -1
+			);		
+		
+		echo $counts[0]->sum;
 		
 	}	
 	
