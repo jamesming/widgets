@@ -12,6 +12,7 @@ border-top:	1px solid black;
 border-left:1px solid black;
 }
 table td{
+width:50%;
 border-right:1px solid black;
 border-bottom:1px solid black;
 font-size:30px;	
