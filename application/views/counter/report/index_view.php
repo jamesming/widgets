@@ -5,7 +5,7 @@
 <?php     	$this->load->view('header/common_css.php');  ?>
 <style>
 table{
-width:400px;
+width:700px;
 margin-top:50px;
 margin-left:50px;
 border-top:	1px solid black;
