@@ -42,7 +42,37 @@ class Counter extends CI_Controller {
 	}
 	
 
+	/**
+	 * report.
+	 * 
+	 * @package BackEnd
+	 * @author James Ming <jamesming@gmail.com>
+	 * @path /index.php/home/report
+	 * @access public
+	 */
+	 
+	public function report(){
 
+		$this->load->view('counter/report/index_view');			
+		 
+	}
+	
+	
+	public function get_unique_page_views(){
+		
+		$counts = $this->my_database_model->select_from_table( 
+			$table = 'page_views', 
+			$select_what = '*', 
+			$where_array = array(), 
+			$use_order = TRUE, 
+			$order_field = 'created', 
+			$order_direction = 'desc',
+			$limit = -1
+			);		
+		
+		echo count($counts);
+		
+	}
 	
 }
 /* End of file main.php */
