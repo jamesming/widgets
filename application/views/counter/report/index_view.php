@@ -79,11 +79,11 @@ table #list_table td{
 	<?php  
 	
 
-	foreach( $website_data['counts'] as  $data ){?>
+	foreach( $website_data['counts'] as  $row ){?>
 		<tr>
-			<td><?php echo $data[0]->ip_address    ?>
+			<td><?php echo $row[0]->ip_address    ?>
 			</td>
-			<td><?php echo $data[0]->city    ?>, <?php echo $data[0]->state    ?>
+			<td><?php echo $row[0]->city    ?>, <?php echo $row[0]->state    ?>
 			</td>
 	<?php     
 	}?>
