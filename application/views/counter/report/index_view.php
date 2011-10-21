@@ -77,6 +77,9 @@ table #list_table td{
 <div  id='list_div'>
 	<table  id='list_table'>
 	<?php  
+	
+	echo '<pre>';print_r(  $website_data['counts']    );echo '</pre>';  exit;
+	
 	foreach( $website_data['counts'] as  $data ){?>
 		<tr>
 			<td><?php echo $data[0]->ip_address    ?>
