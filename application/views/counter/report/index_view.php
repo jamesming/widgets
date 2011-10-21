@@ -5,7 +5,7 @@
 <?php     	$this->load->view('header/common_css.php');  ?>
 <style>
 #logo_div{
-width:900px;	
+width:800px;	
 margin-top:10px;
 }
 table{
