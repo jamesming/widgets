@@ -36,7 +36,7 @@ font-size:30px;
 <div  id='count_div'>
 	<table>
 		<tr>
-			<td colspan=2>
+			<td colspan=2   style='background:lightgray'  >
 				Real-time Impressions for <?php echo $website_data['date']    ?>
 			</td>
 
