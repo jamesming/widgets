@@ -22,6 +22,10 @@ border-right:1px solid black;
 border-bottom:1px solid black;
 font-size:30px;	
 }
+div#list_div{
+	overflow:auto;
+	height:500px;
+}
 table #list_table td{
 	font-size:12px;
 }
