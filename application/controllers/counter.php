@@ -89,7 +89,7 @@ class Counter extends CI_Controller {
 				'created like' => '%'.date("Y").'-'.date("m").'-'.date('j', $this->time).'%'
 			), 
 			$use_order = TRUE, 
-			$order_field = 'city', 
+			$order_field = 'state, city', 
 			$order_direction = 'asc',
 			$limit = -1
 			);	
