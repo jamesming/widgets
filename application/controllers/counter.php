@@ -90,7 +90,7 @@ class Counter extends CI_Controller {
 			), 
 			$use_order = TRUE, 
 			$order_field = 'city', 
-			$order_direction = 'desc',
+			$order_direction = 'asc',
 			$limit = -1
 			);	
 
