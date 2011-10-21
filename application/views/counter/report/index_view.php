@@ -37,7 +37,7 @@ font-size:30px;
 	<table>
 		<tr>
 			<td colspan=2>
-				<?php echo $website_data['date']    ?>
+				Real-time Impressions for <?php echo $website_data['date']    ?>
 			</td>
 
 		</tr>		
