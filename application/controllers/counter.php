@@ -105,6 +105,10 @@ class Counter extends CI_Controller {
 		echo count($counts);
 		
 	}
+	
+	
+	
+	
 	public function get_total_page_views(){
 		
 		$counts = $this->my_database_model->select_from_table( 
@@ -122,6 +126,26 @@ class Counter extends CI_Controller {
 		echo $counts[0]->sum;
 		
 	}	
+	
+	public function get_adbuys_views(){
+		
+		
+		$counts = $this->my_database_model->select_from_table( 
+			$table = 'page_views_adbuys', 
+			$select_what = '*', 
+			$where_array = array(
+				'created like' => '%'.date("Y").'-'.date("m").'-'.date('j', $this->time).'%'
+			), 
+			$use_order = TRUE, 
+			$order_field = 'created', 
+			$order_direction = 'desc',
+			$limit = -1
+			);		
+		
+		echo count($counts);
+		
+	}	
+	
 }
 /* End of file main.php */
 /* Location: ./application/controllers/counter.php */

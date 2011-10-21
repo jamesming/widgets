@@ -54,7 +54,12 @@ font-size:30px;
 			<td id='total_views_td'>
 			</td>
 		</tr>		
-		
+		<tr>
+			<td>Unique Ad Buys
+			</td>
+			<td id='adbuys_td'>
+			</td>
+		</tr>			
 	</table>
 </div>
 
@@ -74,7 +79,13 @@ $(document).ready(function() {
 				$.post("<?php echo base_url() ?>index.php/counter/get_total_page_views",{
 				},function(data) {
 					$('#total_views_td').text(data)
-				});					
+				});				
+				
+				$.post("<?php echo base_url() ?>index.php/counter/get_adbuys_views",{
+				},function(data) {
+					$('#adbuys_td').text(data)
+				});								
+					
 				
 		}, 1000)
 
