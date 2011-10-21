@@ -52,8 +52,10 @@ class Counter extends CI_Controller {
 	 */
 	 
 	public function report(){
-
-		$this->load->view('counter/report/index_view');			
+		$website_data['date'] = date("m").'-'.date('j', $this->time).'-'.date("Y");
+		$this->load->view('counter/report/index_view',
+		array('website_data'=>$website_data)
+		);			
 		 
 	}
 	

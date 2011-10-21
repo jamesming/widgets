@@ -36,6 +36,13 @@ font-size:30px;
 <div  id='count_div'>
 	<table>
 		<tr>
+			<td colspan=2>
+				<?php echo $website_data['date']    ?>
+			</td>
+
+		</tr>		
+		
+		<tr>
 			<td>Unique Visitors
 			</td>
 			<td id='unique_views_td'>
