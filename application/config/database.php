@@ -41,11 +41,14 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-
-if( $_SERVER['HTTP_HOST'] == 'cms.mynuvotv.com' ){
-	$db['default']['hostname'] = "192.168.110.211";
+if( $_SERVER['HTTP_HOST'] == 'api.mynuvotv.com' ){
+		$db['default']['hostname'] = "192.168.110.211";
+}elseif( $_SERVER['HTTP_HOST'] == 'counter.mynuvotv.com' ){
+		$db['default']['hostname'] = "192.168.110.211";
+}elseif( $_SERVER['HTTP_HOST'] == 'polls.mynuvotv.com' ){
+		$db['default']['hostname'] = "192.168.110.211";	
 }else{
-	$db['default']['hostname'] = "localhost";
+		$db['default']['hostname'] = "localhost";
 };
 
 $db['default']['username'] = "jamesming";
