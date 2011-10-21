@@ -26,7 +26,9 @@ font-size:30px;
 
 <body>
 
-
+<div>
+<center><img src='http://mynuvotv.com/assets/images/logo-header-HOMEPAGE.png'/></center>
+</div>
 <div  id='count_div'>
 	<table>
 		<tr>
