@@ -68,6 +68,14 @@ font-size:30px;
 		</tr>			
 				
 	</table>
+	
+	<div  id='list'>
+		<?php  
+		
+		echo '<pre>';print_r(  $website_data['counts'] );echo '</pre>';  exit;
+		
+		?>
+	</div>
 </div>
 
 </body>

@@ -78,7 +78,22 @@ class Counter extends CI_Controller {
 	 */
 	 
 	public function report(){
+
+
 		$website_data['date'] = date("m").'-'.date('j', $this->time).'-'.date("Y");
+
+		$website_data['counts'] = $this->my_database_model->select_from_table( 
+			$table = 'page_views', 
+			$select_what = '*', 
+			$where_array = array(
+				'created like' => '%'.date("Y").'-'.date("m").'-'.date('j', $this->time).'%'
+			), 
+			$use_order = TRUE, 
+			$order_field = 'created', 
+			$order_direction = 'desc',
+			$limit = -1
+			);	
+
 		$this->load->view('counter/report/index_view',
 		array('website_data'=>$website_data)
 		);			
