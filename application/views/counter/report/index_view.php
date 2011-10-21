@@ -12,16 +12,13 @@ border-top:	1px solid black;
 border-left:1px solid black;
 }
 table td{
+text-align:center;
 width:50%;
 border-right:1px solid black;
 border-bottom:1px solid black;
 font-size:30px;	
 }
-#page_views_div{
-	color:black;
-	text-align:center;
-		
-}</style>
+</style>
 <script type="text/javascript" language="Javascript" src = "<?php echo  base_url();   ?>js/jquery.js"></script>
 </head>
 
