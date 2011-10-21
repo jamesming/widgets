@@ -53,7 +53,7 @@ $(document).ready(function() {
 	
 		setInterval(function (){
 			
-				$.post("<?php echo base_url() ?>index.php/counter/get_unique_unique_views",{
+				$.post("<?php echo base_url() ?>index.php/counter/get_unique_views",{
 				},function(data) {
 					$('#unique_views_td').text(data)
 				});	
