@@ -81,9 +81,9 @@ table #list_table td{
 
 	foreach( $website_data['counts'] as  $row ){?>
 		<tr>
-			<td><?php echo $row[0]->ip_address    ?>
+			<td><?php echo $row->ip_address    ?>
 			</td>
-			<td><?php echo $row[0]->city    ?>, <?php echo $row[0]->state    ?>
+			<td><?php echo $row->city    ?>, <?php echo $row->state    ?>
 			</td>
 	<?php     
 	}?>
