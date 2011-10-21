@@ -55,17 +55,23 @@ table#list_table td{
 			</td>
 
 		</tr>		
-		
 		<tr>
+			<td>Total Visitors
+			</td>
+			<td id='total_views_td'>
+			</td>
+		</tr>			
+		<tr>
+			
 			<td>Unique Visitors
 			</td>
 			<td id='unique_views_td'>
 			</td>
 		</tr>
 		<tr>
-			<td>Total Visitors
+			<td>Total Ad Buys
 			</td>
-			<td id='total_views_td'>
+			<td id='total_adbuys_td'>
 			</td>
 		</tr>		
 		<tr>
@@ -74,12 +80,7 @@ table#list_table td{
 			<td id='unique_adbuys_td'>
 			</td>
 		</tr>	
-		<tr>
-			<td>Total Ad Buys
-			</td>
-			<td id='total_adbuys_td'>
-			</td>
-		</tr>			
+		
 				
 	</table>
 	
