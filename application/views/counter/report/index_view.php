@@ -26,6 +26,10 @@ div#list_div{
 	overflow:auto;
 	height:300px;
 	width:720px;
+	margin-left:50px;	
+}
+table#list_table{
+margin-left:0px;	
 }
 table#list_table td{
 	font-size:12px;
