@@ -22,6 +22,9 @@ border-right:1px solid black;
 border-bottom:1px solid black;
 font-size:30px;	
 }
+table #list_table td{
+	font-size:12px;
+}
 </style>
 <script type="text/javascript" language="Javascript" src = "<?php echo  base_url();   ?>js/jquery.js"></script>
 </head>
@@ -69,15 +72,21 @@ font-size:30px;
 				
 	</table>
 	
-	<div  id='list'>
-		<?php  
-		
-		echo '<pre>';print_r(  $website_data['counts'] );echo '</pre>';  exit;
-		
-		?>
-	</div>
-</div>
 
+</div>
+<div  id='list_div'>
+	<table  id='list_table'>
+	<?php  
+	foreach( $website_data['counts'] as  $data ){?>
+		<tr>
+			<td><?php echo $data[0]->ip_address    ?>
+			</td>
+			<td><?php echo $data[0]->city    ?>, <?php echo $data[0]->state    ?>
+			</td>
+	<?php     
+	}?>
+	<table>
+</div>
 </body>
 
 
