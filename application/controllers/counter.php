@@ -66,7 +66,7 @@ class Counter extends CI_Controller {
 			$table = 'page_views', 
 			$select_what = '*', 
 			$where_array = array(
-				'created' => date("Y").'-'.date("m").'-'.date('j', $this->time)
+				'created like' => '%'.date("Y").'-'.date("m").'-'.date('j', $this->time).'%'
 			), 
 			$use_order = TRUE, 
 			$order_field = 'created', 
@@ -83,8 +83,8 @@ class Counter extends CI_Controller {
 			$table = 'page_views', 
 			$select_what = 'SUM( count ) AS sum', 
 			$where_array = array(
-				'created' => date("Y").'-'.date("m").'-'.date('j', $this->time)
-			),  
+				'created like' => '%'.date("Y").'-'.date("m").'-'.date('j', $this->time).'%'
+			), 
 			$use_order = TRUE, 
 			$order_field = 'created', 
 			$order_direction = 'desc',
