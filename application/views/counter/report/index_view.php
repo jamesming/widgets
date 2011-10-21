@@ -23,6 +23,7 @@ border-bottom:1px solid black;
 font-size:30px;	
 }
 div#list_div{
+	margin-top:5px;
 	overflow-y:auto;
 	overflow-x:hidden;
 	height:300px;
