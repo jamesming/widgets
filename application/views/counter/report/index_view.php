@@ -4,6 +4,9 @@
 <?php     	$this->load->view('header/blueprint_css.php');  ?>
 <?php     	$this->load->view('header/common_css.php');  ?>
 <style>
+#logo_div{
+width:700px;	
+}
 table{
 width:700px;
 margin-top:50px;
@@ -26,7 +29,7 @@ font-size:30px;
 
 <body>
 
-<div>
+<div  id='logo_div'>
 <center><img src='http://mynuvotv.com/assets/images/logo-header-HOMEPAGE.png'/></center>
 </div>
 <div  id='count_div'>
