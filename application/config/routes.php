@@ -38,7 +38,15 @@
 |
 */
 
-$route['default_controller'] = "home";
+
+if( $_SERVER['HTTP_HOST'] == 'api.mynuvotv.com' ){
+	$route['default_controller'] = "api";
+}elseif( $_SERVER['HTTP_HOST'] == 'counter.mynuvotv.com' ){
+	$route['default_controller'] = "counter";	
+}elseif( $_SERVER['HTTP_HOST'] == 'polls.mynuvotv.com' ){
+	$config['base_url']	= "polls";	
+}
+
 $route['404_override'] = '';
 
 
