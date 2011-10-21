@@ -4,6 +4,14 @@
 <?php     	$this->load->view('header/blueprint_css.php');  ?>
 <?php     	$this->load->view('header/common_css.php');  ?>
 <style>
+table{
+border-top:	1px solid black;
+border-left:1px solid black;
+}
+table td{
+border-right:1px solid black;
+border-bottom:1px solid black;	
+}
 #page_views_div{
 	font-size:50px;
 	color:black;
@@ -19,9 +27,14 @@
 
 
 <div  id='count_div'>
-	<h1>Unique Visitors to mynuvotv.com</h1>
-	<div  id='page_views_div'>
-	</div>
+	<table>
+		<tr>
+			<td>Unique Visitors
+			</td>
+			<td id='page_views_div'>
+			</td>
+		</tr>
+	</table>
 </div>
 
 </body>
