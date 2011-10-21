@@ -95,7 +95,7 @@ table#list_table td{
 		<tr>
 			<td><?php echo $row->ip_address    ?>
 			</td>
-			<td><?php echo $row->city    ?>, <?php echo $row->state    ?>
+			<td> <?php echo $row->state    ?> - <?php echo $row->city    ?>
 			</td>
 	<?php     
 	}?>
