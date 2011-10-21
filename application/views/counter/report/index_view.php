@@ -5,11 +5,12 @@
 <?php     	$this->load->view('header/common_css.php');  ?>
 <style>
 #logo_div{
-width:700px;	
+width:900px;	
+margin-top:10px;
 }
 table{
 width:700px;
-margin-top:50px;
+margin-top:10px;
 margin-left:50px;
 border-top:	1px solid black;
 border-left:1px solid black;
