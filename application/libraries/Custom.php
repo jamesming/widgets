@@ -19,7 +19,7 @@ private $CI;			// CodeIgniter instance
 function custom(){
 	
 	$this->CI =& get_instance();	
-	
+	$this->time = time();
 
 	
 }
