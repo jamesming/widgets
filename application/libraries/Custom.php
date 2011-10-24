@@ -36,7 +36,10 @@ function custom(){
 		
 		$table = $the_array['table'];
 		
-	  $where_array = array('ip_address' => $the_array['ip_address']);
+	  $where_array = array(
+	  	'ip_address' => $the_array['ip_address'],
+			'created' => 'current_date'	  	
+	  );
 
 		$page_views = $this->CI->my_database_model->select_from_table( 
 					$table, 
