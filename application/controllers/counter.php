@@ -89,7 +89,7 @@ class Counter extends CI_Controller {
 			$table = $this->table, 
 			$select_what = '*', 
 			$where_array = array(
-				'created like' => '%'.date("Y").'-'.date("m").'-'.date('j', $this->time).'%'
+				'created >=' => date("Y").'-'.date("m").'-'.date('j', $this->time)
 			), 
 			$use_order = TRUE, 
 			$order_field = 'state, city', 
@@ -112,7 +112,7 @@ class Counter extends CI_Controller {
 			$table = $this->table, 
 			$select_what = '*', 
 			$where_array = array(
-				'created like' => '%'.date("Y").'-'.date("m").'-'.date('j', $this->time).'%'
+				'created >=' => date("Y").'-'.date("m").'-'.date('j', $this->time)
 			), 
 			$use_order = TRUE, 
 			$order_field = 'created', 
@@ -133,7 +133,7 @@ class Counter extends CI_Controller {
 			$table = $this->table, 
 			$select_what = 'SUM( count ) AS sum', 
 			$where_array = array(
-				'created like' => '%'.date("Y").'-'.date("m").'-'.date('j', $this->time).'%'
+				'created >=' => date("Y").'-'.date("m").'-'.date('j', $this->time)
 			), 
 			$use_order = TRUE, 
 			$order_field = 'created', 
@@ -152,7 +152,7 @@ class Counter extends CI_Controller {
 			$table = $this->table, 
 			$select_what = '*', 
 			$where_array = array(
-				'created like' => '%'.date("Y").'-'.date("m").'-'.date('j', $this->time).'%'
+				'created >=' => date("Y").'-'.date("m").'-'.date('j', $this->time)
 			), 
 			$use_order = TRUE, 
 			$order_field = 'created', 
@@ -171,7 +171,7 @@ class Counter extends CI_Controller {
 			$table = $this->table, 
 			$select_what = 'SUM( count ) AS sum', 
 			$where_array = array(
-				'created like' => '%'.date("Y").'-'.date("m").'-'.date('j', $this->time).'%'
+				'created >=' => date("Y").'-'.date("m").'-'.date('j', $this->time)
 			), 
 			$use_order = TRUE, 
 			$order_field = 'created', 

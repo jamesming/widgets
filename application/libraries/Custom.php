@@ -36,11 +36,6 @@ function custom(){
 		
 		$table = $the_array['table'];
 		
-//	  $where_array = array(
-//	  	'ip_address' => $the_array['ip_address'],
-//			'created like' => '%'.date("Y").'-'.date("m").'-'.date('j', $this->time).'%'  	
-//	  );
-	  
 	  $where_array = array(
 	  	'ip_address' => $the_array['ip_address'],
 			'created >=' => date("Y").'-'.date("m").'-'.date('j', $this->time) 	
