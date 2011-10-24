@@ -29,9 +29,7 @@ class Counter extends CI_Controller {
 												
 					$geo_array = explode(';',$geo_location);
 
-					echo "hello"."<br />";
-
-					echo 	$this->custom->insert_page_views( 
+					$this->custom->insert_page_views( 
 							array(
 								'table' => $this->table,
 								'ip_address' => $geo_array[2],
