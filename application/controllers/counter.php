@@ -65,7 +65,7 @@ class Counter extends CI_Controller {
 								)
 						 );
 						 
-					echo 'test:' . rand(5,12344);
+					echo rand(5,12344);
 		 
 	}
 	
