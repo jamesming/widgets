@@ -70,6 +70,26 @@ class Counter extends CI_Controller {
 	}
 	
 	
+	
+	/**
+	 * menu.
+	 * 
+	 * @package BackEnd
+	 * @author James Ming <jamesming@gmail.com>
+	 * @path /index.php/home/menu
+	 * @access public
+	 */
+	 
+	public function menu(){	
+		?>
+		<br /><br /><br />
+		<a target='_blank' href='http://counter.mynuvotv.com/index.php/counter/report/page_views_home'>Home Page</a><br />
+		<a target='_blank' href='http://counter.mynuvotv.com/index.php/counter/report/page_views_findnuvo'>Find Nuvo</a><br />
+		<a target='_blank' href='http://counter.mynuvotv.com/index.php/counter/report/page_views_ml4'>Model Latinas 4</a><br />
+		<a target='_blank' href='http://counter.mynuvotv.com/index.php/counter/report/page_views_ml4video'>Model Latinas 4 Video</a><br />
+		<?php     
+		
+	}
 
 	/**
 	 * report.
