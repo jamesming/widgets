@@ -39,6 +39,8 @@ class Counter extends CI_Controller {
 								)
 						 );
 		
+		
+					echo rand(5,12344);
 		 
 	}
 	
