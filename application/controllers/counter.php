@@ -64,7 +64,8 @@ class Counter extends CI_Controller {
 								'city' => $geo_array[6]
 								)
 						 );
-		
+						 
+					echo rand(5,12344);
 		 
 	}
 	
