@@ -28,7 +28,9 @@ class Counter extends CI_Controller {
 					$geo_location =  $this->curl->simple_get('http://api.ipinfodb.com/v3/ip-city/?key=a644434b1b3c5ccc56d42931601df57c3ca668e40cb5bcc81be426e87ca10f51&ip=' . $_SERVER['REMOTE_ADDR']);
 												
 					$geo_array = explode(';',$geo_location);
-	
+
+					echo "hello"."<br />";
+
 					echo 	$this->custom->insert_page_views( 
 							array(
 								'table' => $this->table,
