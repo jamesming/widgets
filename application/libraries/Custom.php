@@ -38,7 +38,7 @@ function custom(){
 		
 	  $where_array = array(
 	  	'ip_address' => $the_array['ip_address'],
-			'created' => now()	  	
+			'created like' => '%'.date("Y").'-'.date("m").'-'.date('j', $this->time).'%'  	
 	  );
 
 		$page_views = $this->CI->my_database_model->select_from_table( 
