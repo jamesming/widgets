@@ -109,22 +109,22 @@ $(document).ready(function() {
 	
 		setInterval(function (){
 			
-				$.post("<?php echo base_url() ?>index.php/counter/get_unique_views",{
+				$.post("<?php echo base_url() ?>index.php/counter/get_unique_views/page_views_home",{
 				},function(data) {
 					$('#unique_views_td').text(data)
 				});	
 				
-				$.post("<?php echo base_url() ?>index.php/counter/get_total_page_views",{
+				$.post("<?php echo base_url() ?>index.php/counter/get_total_page_views/page_views_home",{
 				},function(data) {
 					$('#total_views_td').text(data)
 				});				
 				
-				$.post("<?php echo base_url() ?>index.php/counter/get_unique_adbuys_views",{
+				$.post("<?php echo base_url() ?>index.php/counter/get_unique_adbuys_views/page_views_adbuys_home",{
 				},function(data) {
 					$('#unique_adbuys_td').text(data)
 				});			
 				
-				$.post("<?php echo base_url() ?>index.php/counter/get_total_adbuy_views",{
+				$.post("<?php echo base_url() ?>index.php/counter/get_total_adbuy_views/page_views_adbuys_home",{
 				},function(data) {
 					$('#total_adbuys_td').text(data)
 				});												

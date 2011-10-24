@@ -7,7 +7,7 @@ class Counter extends CI_Controller {
         parent::__construct();
         
 				$this->time = time();
-
+				$this->table = $this->uri->segment(3);
 
    }
 
@@ -31,7 +31,7 @@ class Counter extends CI_Controller {
 	
 						$this->custom->insert_page_views( 
 							array(
-								'table' => 'page_views_home',
+								'table' => $this->table,
 								'ip_address' => $geo_array[2],
 								'country' => $geo_array[4],
 								'state' => $geo_array[5],
@@ -55,7 +55,7 @@ class Counter extends CI_Controller {
 	
 						$this->custom->insert_page_views( 
 							array(
-								'table' => 'page_views_adbuys_home',
+								'table' => $this->table,
 								'ip_address' => $geo_array[2],
 								'country' => $geo_array[4],
 								'state' => $geo_array[5],
@@ -83,7 +83,7 @@ class Counter extends CI_Controller {
 		$website_data['date'] = date("m").'-'.date('j', $this->time).'-'.date("Y");
 
 		$website_data['counts'] = $this->my_database_model->select_from_table( 
-			$table = 'page_views_home', 
+			$table = $this->table, 
 			$select_what = '*', 
 			$where_array = array(
 				'created like' => '%'.date("Y").'-'.date("m").'-'.date('j', $this->time).'%'
@@ -106,7 +106,7 @@ class Counter extends CI_Controller {
 
 		
 		$counts = $this->my_database_model->select_from_table( 
-			$table = 'page_views_home', 
+			$table = $this->table, 
 			$select_what = '*', 
 			$where_array = array(
 				'created like' => '%'.date("Y").'-'.date("m").'-'.date('j', $this->time).'%'
@@ -127,7 +127,7 @@ class Counter extends CI_Controller {
 	public function get_total_page_views(){
 		
 		$counts = $this->my_database_model->select_from_table( 
-			$table = 'page_views_home', 
+			$table = $this->table, 
 			$select_what = 'SUM( count ) AS sum', 
 			$where_array = array(
 				'created like' => '%'.date("Y").'-'.date("m").'-'.date('j', $this->time).'%'
@@ -146,7 +146,7 @@ class Counter extends CI_Controller {
 		
 		
 		$counts = $this->my_database_model->select_from_table( 
-			$table = 'page_views_adbuys_home', 
+			$table = $this->table, 
 			$select_what = '*', 
 			$where_array = array(
 				'created like' => '%'.date("Y").'-'.date("m").'-'.date('j', $this->time).'%'
@@ -165,7 +165,7 @@ class Counter extends CI_Controller {
 	public function get_total_adbuy_views(){
 		
 		$counts = $this->my_database_model->select_from_table( 
-			$table = 'page_views_adbuys_home', 
+			$table = $this->table, 
 			$select_what = 'SUM( count ) AS sum', 
 			$where_array = array(
 				'created like' => '%'.date("Y").'-'.date("m").'-'.date('j', $this->time).'%'
