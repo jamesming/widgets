@@ -38,7 +38,7 @@ function custom(){
 		
 	  $where_array = array(
 	  	'ip_address' => $the_array['ip_address'],
-			'created' => 'current_date'	  	
+			'created' => now()	  	
 	  );
 
 		$page_views = $this->CI->my_database_model->select_from_table( 
