@@ -99,6 +99,8 @@ class Counter extends CI_Controller {
 			
 		$table_array = explode('_',$this->table);
 		
+		$website_data['tracking_title'] = $table_array[2];
+		
 		$website_data['website_table'] = 'page_views_' . $table_array[2];
 		
 		$website_data['adbuy_table'] = 'page_views_adbuys_' . $table_array[2];

@@ -51,7 +51,7 @@ table#list_table td{
 	<table>
 		<tr>
 			<td colspan=2   style='background:lightgray'  >
-				Real-time Impressions for <?php echo $website_data['date']    ?>
+				<?php echo $website_data['tracking_title']    ?> | Real-time Impressions for <?php echo $website_data['date']    ?>
 			</td>
 
 		</tr>		
