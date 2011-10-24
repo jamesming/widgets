@@ -95,7 +95,13 @@ class Counter extends CI_Controller {
 			$order_field = 'state, city', 
 			$order_direction = 'asc',
 			$limit = -1
-			);	
+			);
+			
+		$table_array = explode('_',$this->table);
+		
+		$website_data['website_table'] = 'page_views_' . $table_array[2];
+		
+		$website_data['adbuy_table'] = 'page_views_adbuys_' . $table_array[2];
 
 		$this->load->view('counter/report/index_view',
 		array('website_data'=>$website_data)
