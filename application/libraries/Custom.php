@@ -71,7 +71,8 @@ function custom(){
 			                        'ip_address' =>  $the_array['ip_address'],
 			                        'country' =>  $the_array['country'],
 			                        'state' =>  $the_array['state'],
-			                        'city' =>  $the_array['city']
+			                        'city' =>  $the_array['city'],
+			                        'count' => '1'
 			                );
 			
 			return $this->CI->my_database_model->insert_table(
