@@ -1263,7 +1263,7 @@ submitted
 function t(){
 	
 	
-$table = 'feature_items';
+$table = 'page_views_urls';
 
 $this->my_database_model->	create_generic_table($table );
 
@@ -1271,18 +1271,10 @@ $this->my_database_model->	create_generic_table($table );
 
 $fields_array = array(
 
-											'name' => array(
-                                               'type' => 'varchar(255)'),
-                                               
-                      'feature_format_id' => array(
-                                               'type' => 'int(11)'),
-                      'title' => array(
-                                               'type' => 'varchar(255)'),
-                      'content' => array(
-                                               'type' => 'blob'),
-                      'video' => array(
-                                               'type' => 'blob')
-
+											'url' => array(
+                                               'type' => 'varchar(1024)'),
+                      'name' => array(
+                                               'type' => 'varchar(255)')
               ); 
               
               
@@ -1292,40 +1284,7 @@ $this->my_database_model->add_column_to_table_if_exist(
 	$fields_array
 );    	
 	
-$table = 'feature_formats';
 
-$this->my_database_model->	create_generic_table($table );
-
-
-
-$fields_array = array(
-
-											'name' => array(
-                                               'type' => 'varchar(255)')
-              ); 
-              
-              
-              
-$this->my_database_model->add_column_to_table_if_exist(
-	$table, 
-	$fields_array
-);
-
-$table = 'feature_items_images';
-
-$this->my_database_model->	create_generic_table($table );
-
-$fields_array = array(
-                      'feature_item_id' => array(
-                                               'type' => 'int(11)')
-              ); 
-              
-$this->my_database_model->add_column_to_table_if_exist(
-	$table, 
-	$fields_array
-);   
-
-       
 
 }
 	  

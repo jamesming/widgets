@@ -109,22 +109,22 @@ $(document).ready(function() {
 	
 		setInterval(function (){
 			
-				$.post("<?php echo base_url() ?>index.php/counter/get_unique_views/<?php echo $website_data['website_table']    ?>",{
+				$.post("<?php echo base_url() ?>index.php/counter/get_unique_views/<?php echo $website_data['page_views_url_name']    ?>",{
 				},function(data) {
 					$('#unique_views_td').text(data)
 				});	
 				
-				$.post("<?php echo base_url() ?>index.php/counter/get_total_page_views/<?php echo $website_data['website_table']    ?>",{
+				$.post("<?php echo base_url() ?>index.php/counter/get_total_page_views/<?php echo $website_data['page_views_url_name']    ?>",{
 				},function(data) {
 					$('#total_views_td').text(data)
 				});				
 				
-				$.post("<?php echo base_url() ?>index.php/counter/get_unique_adbuys_views/<?php echo $website_data['adbuy_table']    ?>",{
+				$.post("<?php echo base_url() ?>index.php/counter/get_unique_adbuys_views/<?php echo $website_data['page_views_url_redirect']    ?>",{
 				},function(data) {
 					$('#unique_adbuys_td').text(data)
 				});			
 				
-				$.post("<?php echo base_url() ?>index.php/counter/get_total_adbuy_views/<?php echo $website_data['adbuy_table']    ?>",{
+				$.post("<?php echo base_url() ?>index.php/counter/get_total_adbuy_views/<?php echo $website_data['page_views_url_redirect']    ?>",{
 				},function(data) {
 					$('#total_adbuys_td').text(data)
 				});												

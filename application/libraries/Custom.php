@@ -34,15 +34,14 @@ function custom(){
 	 
 	function insert_page_views( $the_array ){		
 		
-		$table = $the_array['table'];
-		
 	  $where_array = array(
 	  	'ip_address' => $the_array['ip_address'],
-			'created >=' => date("Y").'-'.date("m").'-'.date('j', $this->time) 	
+			'created >=' => date("Y").'-'.date("m").'-'.date('j', $this->time),
+			'page_views_url_id' => $the_array['page_views_url_id']
 	  );	  
 
 		$page_views = $this->CI->my_database_model->select_from_table( 
-					$table, 
+					$table = 'page_views', 
 					$select_what = '*', 
 					$where_array, 
 					$use_order = FALSE, 
@@ -68,6 +67,7 @@ function custom(){
 	  }else{
 		
 			$insert_what = array(
+															'page_views_url_id' => $the_array['page_views_url_id'],
 			                        'ip_address' =>  $the_array['ip_address'],
 			                        'country' =>  $the_array['country'],
 			                        'state' =>  $the_array['state'],
@@ -75,7 +75,7 @@ function custom(){
 			                );
 			
 			return $this->CI->my_database_model->insert_table(
-											$table, 
+											$table = 'page_views', 
 											$insert_what
 													); 		
 		

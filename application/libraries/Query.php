@@ -779,7 +779,30 @@ function query(){
 
 	}
 	
+/**
+ * page_views_urls
+ *
+ * {@source }
+ * @package BackEnd
+ * @author James Ming <jamesming@gmail.com>
+ * @access public
+ * @return array  */ 
+	
+	function page_views_urls( $where_array = array() ){
+		
+			$page_views_urls = $this->CI->my_database_model->select_from_table( 
+			$table = 'page_views_urls', 
+			$select_what = '*', 
+			$where_array, 
+			$use_order = FALSE, 
+			$order_field = 'created', 
+			$order_direction = 'desc', 
+			$limit = -1
+			);
 
+			return $page_views_urls;
+			
+	}
 	
 }
 

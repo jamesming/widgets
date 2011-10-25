@@ -92,7 +92,34 @@ class Home extends CI_Controller {
 		redirect('/home/login');
 		
 	}
+
+function t(){
 	
+	
+$table = 'page_views_urls';
+
+$this->my_database_model->	create_generic_table($table );
+
+
+
+$fields_array = array(
+
+											'url' => array(
+                                               'type' => 'varchar(1024)'),
+                      'name' => array(
+                                               'type' => 'varchar(255)')
+              ); 
+              
+              
+              
+$this->my_database_model->add_column_to_table_if_exist(
+	$table, 
+	$fields_array
+);    	
+	
+
+
+}
 }
 /* End of file main.php */
 /* Location: ./application/controllers/home.php */
