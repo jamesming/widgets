@@ -52,7 +52,7 @@ $query = 	"SELECT
 					 AND
 					 	carousel_items_images.carousel_item_id = carousel_items.id
 					 AND
-					 	carousel_items_images.image_type_id in (7,8)
+					 	carousel_items_images.image_type_id in (7,8,9)
 					 OR
 					 	carousel_sets.id = carousel_sets_calendars.carousel_set_id
 					 AND
@@ -66,7 +66,7 @@ $query = 	"SELECT
 					 AND
 					 	carousel_items_images.carousel_item_id = carousel_items.id
 					 AND
-					 	carousel_items_images.image_type_id in (7,8)					 	
+					 	carousel_items_images.image_type_id in (7,8,9)					 	
 					 ORDER BY
 					 	carousel_sets_calendars.day_of_year DESC,
 					 	carousel_items_sets.id,
