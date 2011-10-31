@@ -37,22 +37,16 @@ class Counter extends CI_Controller {
 												
 					$geo_array = explode(';',$geo_location);
 
-//					$this->custom->insert_page_views( 
-//							array(
-//								'page_views_url_id' => $this->page_view_url_id,
-//								'ip_address' => $_SERVER['REMOTE_ADDR'],
-//								'country' => $geo_array[4],
-//								'state' => $geo_array[5],
-//								'city' => $geo_array[6]
-//								)
-//						 );
-						 
-						 
 					$this->custom->insert_page_views( 
 							array(
-								'ip_address' => $_SERVER['REMOTE_ADDR']
+								'page_views_url_id' => $this->page_view_url_id,
+								'ip_address' => $geo_array[2],
+								'country' => $geo_array[4],
+								'state' => $geo_array[5],
+								'city' => $geo_array[6]
 								)
-						 );		
+						 );
+		
 		
 					echo rand(5,12344);
 		 
