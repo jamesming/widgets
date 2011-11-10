@@ -36,6 +36,7 @@ $query = 	"SELECT
 					 	carousel_items.name AS 	carousel_items_name,
 					 	carousel_items.iphone_directTo,
 					 	carousel_items.videoID,
+					 	carousel_items.showpage_item_id,
 					 	carousel_items_images.image_type,
 					 	carousel_items_images.id AS carousel_items_image_id
 					 FROM 
@@ -178,7 +179,10 @@ foreach( $carousel_items  as $carousel_item){
 			){
 				$container[$key0] =$values;
 			};				
-						
+			if( $key0 == 'showpage_item_id'
+			){
+				$container[$key0] =$values;
+			};							
 		}
 
 		$shows[] = $container;
