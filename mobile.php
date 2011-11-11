@@ -149,9 +149,12 @@ foreach( $sets  as  $key =>  $set){
 
 
 $image_types = array(
-								'hero_iphone', 
-								'right_tab_iphone', 
-								'right_tab_border_iphone');
+								'hero_iphone_3g', 
+								'right_tab_iphone_3g', 
+								'right_tab_border_iphone_3g',
+								'hero_iphone_4g', 
+								'right_tab_iphone_4g', 
+								'right_tab_border_iphone_4g');
 
 foreach( $carousel_items  as $carousel_item){
 		foreach(  $carousel_item as  $key0 => $values){
@@ -161,10 +164,18 @@ foreach( $carousel_items  as $carousel_item){
 				$count=0;
 				foreach( $values  as $key1 => $carousel_items_array){ 
 					foreach( $carousel_items_array  as  $key2 => $carousel_items_id){
-						$container[  $image_types[$count]   ] = 'http://cms.mynuvotv.com/uploads/carousel_items_images/'.$carousel_items_id.'/image.png';
+						$container[  $image_types[$count]   ] = 'http://cms.mynuvotv.com/uploads/carousel_items_images/'.$carousel_items_id.'/image_iphone.png';
 						$count++;
 					}
 				}
+				foreach( $values  as $key1 => $carousel_items_array){ 
+					foreach( $carousel_items_array  as  $key2 => $carousel_items_id){
+						$container[  $image_types[$count]   ] = 'http://cms.mynuvotv.com/uploads/carousel_items_images/'.$carousel_items_id.'/image_iphone@2x.png';
+						$count++;
+					}
+				}				
+				
+				
 			};
 			
 			if( $key0 == 'iphone_directTo'
