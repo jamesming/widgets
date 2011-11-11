@@ -34,7 +34,7 @@ if( isset($_GET['date']) ){
 $query = 	"SELECT
 						carousel_items_sets.id  AS carousel_items_sets_id,
 					 	carousel_items.name AS 	carousel_items_name,
-					 	carousel_items.directTo,
+					 	carousel_items.iphone_directTo as directTo,
 					 	carousel_items.videoID,
 					 	carousel_items.showpage_item_id,
 					 	carousel_items.page_link,
