@@ -87,7 +87,7 @@ while ($row = mysql_fetch_assoc($result)) {
 	$sets[] = $row;
 }
 
-//echo '<pre>';print_r( $sets   );echo '</pre>';  exit;
+echo '<pre>';print_r( $sets   );echo '</pre>';  exit;
 
 $previous_id = "";
 
