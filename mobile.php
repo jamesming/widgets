@@ -83,6 +83,8 @@ $query = 	"SELECT
 
 $result = mysql_query($query);
 
+echo $query;exit;
+
 while ($row = mysql_fetch_assoc($result)) {
 	$sets[] = $row;
 }
