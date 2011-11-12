@@ -151,11 +151,11 @@ foreach( $sets  as  $key =>  $set){
 
 $image_types = array(
 								'hero_iphone_3g', 
-								'right_tab_iphone_3g', 
-								'right_tab_border_iphone_3g',
+								'thumb_iphone_3g', 
+								'thumb_border_iphone_3g',
 								'hero_iphone_4g', 
-								'right_tab_iphone_4g', 
-								'right_tab_border_iphone_4g');
+								'thumb_iphone_4g', 
+								'thumb_border_iphone_4g');
 
 foreach( $carousel_items  as $carousel_item){
 		foreach(  $carousel_item as  $key0 => $values){
