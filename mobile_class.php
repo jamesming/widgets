@@ -65,6 +65,24 @@ class Mobile_api{
 					}
 					return $sets;
 				}
+
+				function get_showpages(){
+					$query = 	"SELECT
+											showpage_items.id as showpage_item_id,
+											showpage_items.name
+										 FROM 
+										 	showpage_items
+										 ";
+					
+					$result = mysql_query($query);
+					while ($row = mysql_fetch_assoc($result)) {
+						foreach( $row  as  $key => $value){
+							$showpage[$key] = $value;
+						}
+						$showpages[]=$showpage;
+					}
+					return $showpages;
+				}
 				
 				function get_showpage($showpage_item_id){
 					$query = 	"SELECT
@@ -165,7 +183,7 @@ class Mobile_api{
 										 AND
 										 	showpage_cast_items_images.image_type_id in (22)
 										 ";
-					
+
 				
 					$result = mysql_query($query);
 					while ($row = mysql_fetch_assoc($result)) {
@@ -174,7 +192,7 @@ class Mobile_api{
 						}
 						 	$showpage[] = $cast;
 					}
-					return $showpage;
+					return ( isset( $showpage) ? $showpage:array() );
 				}
 				
 				function group_arrays_by_primary_key( 
