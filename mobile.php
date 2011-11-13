@@ -2,7 +2,7 @@
     
 include('db_connect.php');
 include('convert_array_xml_class.php');
-include('mobile_functions.php');
+include('mobile_class.php');
 
 if( isset($_GET['date']) ){
 	
@@ -18,13 +18,13 @@ if( isset($_GET['date']) ){
 		$day_to_view = date('z',  strtotime( date('Y').'-'.date('m').'-'.date('d') ));	
 };
 
-$sets = get_sets(
+$sets = $mobile_api->get_sets(
 	$day_to_view,
 	$year_to_view,
 	$year_to_view_minus_one_year
 );
 
-$carousel_items = group_arrays_by_primary_key( 
+$carousel_items = $mobile_api->group_arrays_by_primary_key( 
 	$groups = $sets,  
 	$primary_key = 'carousel_items_sets_id',
 	$image_key = 'carousel_items_image_id'
@@ -47,7 +47,7 @@ $carousel_items = group_arrays_by_primary_key(
 									'thumb_iphone_inactive_4g', 
 									'thumb_iphone_active_4g');
 	
-$shows = prepare_iphone_array(
+$shows = $mobile_api->prepare_iphone_array_with_more_than_one_image_type(
 	$crate = $carousel_items,
 	$directory  = 'carousel_items_images',
 	$image_types,
@@ -56,7 +56,7 @@ $shows = prepare_iphone_array(
 
 
 
-output_array(
+$mobile_api->output_array(
 	$array = $shows,
 	$format = $_GET["output"]
 );
