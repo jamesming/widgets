@@ -163,7 +163,7 @@ class Mobile_api{
 										 AND
 										 	showpage_cast_items.id = showpage_cast_items_images.showpage_cast_item_id
 										 AND
-										 	showpage_cast_items_images.image_type_id in (13)
+										 	showpage_cast_items_images.image_type_id in (22)
 										 ";
 					
 				
