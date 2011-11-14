@@ -280,9 +280,9 @@ class Mobile_api{
 							foreach( ( isset( $array) ? $array:array() )  as $key => $value){
 								$count=0;
 								if( $key == $image_id_field){
-												$container[  $image_types[$count]   ] = 'http://cms.mynuvotv.com/uploads/'.$directory.'/'.$value.'/image_iphone.png';
+												$container[  $image_types[$count]   ] = 'http://cms.mynuvotv.com/uploads/'.$directory.'/'.$value.'/image.png';
 												$count++;
-												$container[  $image_types[$count]   ] = 'http://cms.mynuvotv.com/uploads/'.$directory.'/'.$value.'/image_iphone@2x.png';
+												$container[  $image_types[$count]   ] = 'http://cms.mynuvotv.com/uploads/'.$directory.'/'.$value.'/image@2x.png';
 								}
 								
 								foreach( $fields  as  $field){
