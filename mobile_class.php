@@ -206,7 +206,7 @@ class Mobile_api{
 					
 					$count=0;
 					
-					foreach( $groups  as  $key =>  $group){
+					foreach( ( isset( $groups) ? $groups:array() )  as  $key =>  $group){
 						$count++;
 						if( $previous_id == $group[$primary_key]	||
 								$previous_id == ""
@@ -299,7 +299,7 @@ class Mobile_api{
 					$fields
 				){
 					
-						foreach( $crate  as $box){
+						foreach( ( isset( $crate) ? $crate:array() )  as $box){
 								foreach(  $box as  $key0 => $values0){
 									
 									if( $key0 == 'images'){
