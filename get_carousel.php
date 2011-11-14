@@ -58,7 +58,7 @@ $shows = $mobile_api->prepare_iphone_array_with_more_than_one_image_type(
 
 $mobile_api->output_array(
 	$array = $shows,
-	$format = $_GET["output"]
+	$format = ( isset( $_GET["output"] ) ? $_GET["output"]:'test' )
 );
 
 ?>
