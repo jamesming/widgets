@@ -15,11 +15,13 @@ $showpage_item_id = ( isset( $_GET["showpage_item_id"]) ? $_GET["showpage_item_i
 					$image_key = 'showpage_items_image_id'
 				);
 				
-//echo '<pre>';print_r(  $show    );echo '</pre>';  exit;
+
 				$image_types = array(
 						'hero_iphone_3g',
+						'hero_android_3g',
 						'showpage_hero_mobile_thumb_3g',						
 						'hero_iphone_4g',
+						'hero_android_4g',
 						'showpage_hero_mobile_thumb_4g'
 				);
 				
