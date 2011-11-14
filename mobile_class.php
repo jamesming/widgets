@@ -99,7 +99,9 @@ class Mobile_api{
 										 AND
 										 	showpage_items.id = showpage_items_images.showpage_item_id
 										 AND
-										 	showpage_items_images.image_type_id in (11, 30,29)
+										 	showpage_items_images.image_type_id in (11, 29, 30)
+										 ORDER BY
+										 	showpage_items_images.image_type_id
 										 ";
 					
 					$result = mysql_query($query);
