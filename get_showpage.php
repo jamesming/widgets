@@ -14,7 +14,7 @@ $showpage_item_id = ( isset( $_GET["show_page_id"]) ? $_GET["show_page_id"]:'10'
 					$directory = 'showpage_items_images',
 					$image_types = array('hero_iphone_3g','hero_iphone_4g'),
 					$image_id_field = 'showpage_items_image_id',
-					$fields = array('name') 
+					$fields = array('name', 'about') 
 				);
 
 $showpages['feature'] = $mobile_api->get_showpage_feature($showpage_item_id);

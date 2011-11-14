@@ -88,6 +88,7 @@ class Mobile_api{
 					$query = 	"SELECT
 											showpage_items.id as showpage_item_id,
 											showpage_items.name,
+											showpage_items.about,
 											showpage_items_images.image_type,
 											showpage_items_images.id as showpage_items_image_id
 										 FROM 
@@ -283,7 +284,7 @@ class Mobile_api{
 								foreach( $fields  as  $field){
 									if( $key == $field
 									){
-										$container[$key] =$value;
+										$container[$key] = $value;
 									};			
 								}
 								
