@@ -9,13 +9,27 @@ $showpage_item_id = ( isset( $_GET["showpage_item_id"]) ? $_GET["showpage_item_i
 
 				$show = $mobile_api->get_showpage($showpage_item_id);
 				
-				$showpages['show'] = $mobile_api->prepare_iphone_array_with_one_image_type(
-					$show,
-					$directory = 'showpage_items_images',
-					$image_types = array('hero_iphone_3g','hero_iphone_4g'),
-					$image_id_field = 'showpage_items_image_id',
-					$fields = array('name', 'about') 
+				$show = $mobile_api->group_arrays_by_primary_key( 
+					$groups = $show,  
+					$primary_key = 'showpage_item_id',
+					$image_key = 'showpage_items_image_id'
 				);
+				
+//echo '<pre>';print_r(  $show    );echo '</pre>';  exit;
+				$image_types = array(
+						'hero_iphone_3g',
+						'showpage_hero_mobile_thumb_3g',						
+						'hero_iphone_4g',
+						'showpage_hero_mobile_thumb_4g'
+				);
+				
+$showpages['show'] = $mobile_api->prepare_iphone_array_with_more_than_one_image_type(
+	$crate = $show,
+	$directory = 'showpage_items_images',
+	$image_types,
+	$fields =  array('name', 'about') 
+);
+
 
 $showpages['feature'] = $mobile_api->get_showpage_feature($showpage_item_id);
 

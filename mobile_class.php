@@ -99,7 +99,7 @@ class Mobile_api{
 										 AND
 										 	showpage_items.id = showpage_items_images.showpage_item_id
 										 AND
-										 	showpage_items_images.image_type_id in (11)
+										 	showpage_items_images.image_type_id in (11,30)
 										 ";
 					
 					$result = mysql_query($query);
@@ -107,8 +107,10 @@ class Mobile_api{
 						foreach( $row  as  $key => $value){
 							$showpage[$key] = $value;
 						}
+						$showpages[] = $showpage;
 					}
-					return $showpage;
+					
+					return $showpages;
 				}
 				
 				function get_showpage_feature($showpage_item_id){
