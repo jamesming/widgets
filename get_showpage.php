@@ -5,7 +5,7 @@ include('convert_array_xml_class.php');
 include('mobile_class.php');
 
 
-$showpage_item_id = ( isset( $_GET["show_page_id"]) ? $_GET["show_page_id"]:'10' );
+$showpage_item_id = ( isset( $_GET["showpage_item_id"]) ? $_GET["showpage_item_id"]:'0' );
 
 				$show = $mobile_api->get_showpage($showpage_item_id);
 				
