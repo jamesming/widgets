@@ -273,7 +273,7 @@ class Mobile_api{
 					$image_id_field,
 					$fields
 				){
-							foreach( $array  as $key => $value){
+							foreach( ( isset( $array) ? $array:array() )  as $key => $value){
 								$count=0;
 								if( $key == $image_id_field){
 												$container[  $image_types[$count]   ] = 'http://cms.mynuvotv.com/uploads/'.$directory.'/'.$value.'/image_iphone.png';
