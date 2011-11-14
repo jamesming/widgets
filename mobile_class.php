@@ -298,7 +298,7 @@ class Mobile_api{
 					$crate,
 					$directory,
 					$image_types,
-					$fields,
+					$fields
 				){
 					
 						foreach( ( isset( $crate) ? $crate:array() )  as $box){
