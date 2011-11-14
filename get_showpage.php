@@ -6,7 +6,7 @@ include('mobile_class.php');
 
 
 $showpage_item_id = ( isset( $_GET["showpage_item_id"]) ? $_GET["showpage_item_id"]:'0' );
-
+echo '<pre>';print_r(  $showpage_item_id );echo '</pre>';  exit;
 				$show = $mobile_api->get_showpage($showpage_item_id);
 				
 				$showpages['show'] = $mobile_api->prepare_iphone_array_with_one_image_type(
