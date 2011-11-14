@@ -298,7 +298,7 @@ class Mobile_api{
 					$crate,
 					$directory,
 					$image_types,
-					$fields
+					$fields,
 				){
 					
 						foreach( ( isset( $crate) ? $crate:array() )  as $box){
@@ -308,13 +308,13 @@ class Mobile_api{
 										$count=0;
 										foreach( $values0  as $key1 => $image_ids){ 
 											foreach( $image_ids  as  $key2 => $image_id){
-												$container[  $image_types[$count]   ] = 'http://cms.mynuvotv.com/uploads/'.$directory.'/'.$image_id.'/image_iphone.png';
+												$container[  $image_types[$count]   ] = 'http://cms.mynuvotv.com/uploads/'.$directory.'/'.$image_id.'/image.png';
 												$count++;
 											}
 										}
 										foreach( $values0  as $key1 => $image_ids){ 
 											foreach( $image_ids  as  $key2 => $image_id){
-												$container[  $image_types[$count]   ] = 'http://cms.mynuvotv.com/uploads/'.$directory.'/'.$image_id.'/image_iphone@2x.png';
+												$container[  $image_types[$count]   ] = 'http://cms.mynuvotv.com/uploads/'.$directory.'/'.$image_id.'/image@2x.png';
 												$count++;
 											}
 										}				
