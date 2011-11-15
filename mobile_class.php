@@ -112,7 +112,7 @@ class Mobile_api{
 						$showpages[] = $showpage;
 					}
 					
-					return $showpages;
+					return ( isset( $showpages) ? $showpages:array() );
 				}
 				
 				function get_showpage_feature($showpage_item_id){
@@ -137,7 +137,7 @@ class Mobile_api{
 							$showpage_feature[$key] = $value;
 						}
 					}
-					return $showpage_feature;
+					return ( isset( $showpage_feature) ? $showpage_feature:array() );
 				}
 				
 				function get_iphone_gallery_photos($showpage_item_id){
@@ -170,7 +170,7 @@ class Mobile_api{
 							 	
 							 	
 						}
-				return $showpage;	
+				return ( isset( $showpage) ? $showpage:array() );	
 				}
 				
 				function get_cast($showpage_item_id){
@@ -338,7 +338,7 @@ class Mobile_api{
 								$results[] = $container;
 								unset($container);
 						}
-						return $results;
+						return ( isset( $results) ? $results:array() );
 				}
 				
 				function output_array(
