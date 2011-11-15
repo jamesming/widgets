@@ -40,12 +40,18 @@ $carousel_items = $mobile_api->group_arrays_by_primary_key(
 	);
 	
 	$image_types = array(
+	
 									'hero_iphone_3g', 
 									'thumb_iphone_inactive_3g', 
 									'thumb_iphone_active_3g',
+									'hero_android_3g',
+									
 									'hero_iphone_4g', 
 									'thumb_iphone_inactive_4g', 
-									'thumb_iphone_active_4g');
+									'thumb_iphone_active_4g',
+									'hero_android_4g'
+									
+									);
 	
 $shows = $mobile_api->prepare_iphone_array_with_more_than_one_image_type(
 	$crate = $carousel_items,

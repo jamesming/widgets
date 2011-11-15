@@ -35,7 +35,7 @@ class Mobile_api{
 										 AND
 										 	carousel_items_images.carousel_item_id = carousel_items.id
 										 AND
-										 	carousel_items_images.image_type_id in (7,8,9)
+										 	carousel_items_images.image_type_id in (7,8,9,32)
 										 OR
 										 	carousel_sets.id = carousel_sets_calendars.carousel_set_id
 										 AND
@@ -49,7 +49,7 @@ class Mobile_api{
 										 AND
 										 	carousel_items_images.carousel_item_id = carousel_items.id
 										 AND
-										 	carousel_items_images.image_type_id in (7,8,9)					 	
+										 	carousel_items_images.image_type_id in (7,8,9,32)					 	
 										 ORDER BY
 										 	carousel_sets_calendars.day_of_year DESC,
 										 	carousel_items_sets.id,
@@ -63,7 +63,7 @@ class Mobile_api{
 					while ($row = mysql_fetch_assoc($result)) {
 						$sets[] = $row;
 					}
-					return $sets;
+					return $sets;  
 				}
 
 				function get_showpages(){
@@ -304,6 +304,7 @@ class Mobile_api{
 				){
 					
 						foreach( ( isset( $crate) ? $crate:array() )  as $box){
+							
 								foreach(  $box as  $key0 => $values0){
 									
 									if( $key0 == 'images'){
