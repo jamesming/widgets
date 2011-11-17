@@ -130,16 +130,11 @@ class Mobile_api{
 											showpage_feature_items.title,
 											showpage_feature_items.content
 										 FROM 
-										 	showpage_feature_items,
-										 	showpage_feature_items_images
+										 	showpage_feature_items
 										 WHERE
-										 	showpage_feature_items.showpage_item_id = $showpage_item_id
-										 AND
 										 	showpage_feature_items.id = showpage_feature_items_images.showpage_feature_item_id
 										 ";
-					
-				
-					echo '<pre>';print_r( $query  );echo '</pre>';  exit;
+
 					$result = mysql_query($query);
 					while ($row = mysql_fetch_assoc($result)) {
 						foreach( $row  as  $key => $value){
