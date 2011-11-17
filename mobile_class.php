@@ -136,7 +136,6 @@ class Mobile_api{
 										 ";
 					
 				
-					echo '<pre>';print_r( $query  );echo '</pre>';  exit;
 					$result = mysql_query($query);
 					while ($row = mysql_fetch_assoc($result)) {
 						foreach( $row  as  $key => $value){
