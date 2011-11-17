@@ -145,7 +145,7 @@ class Mobile_api{
 						foreach( $row  as  $key => $value){
 							$showpage_feature[$key] = $value;
 						}
-					}
+					}echo '<pre>';print_r(  $showpage_feature  );echo '</pre>';  exit;
 					return ( isset( $showpage_feature) ? $showpage_feature:array() );
 				}
 				
