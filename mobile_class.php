@@ -139,13 +139,13 @@ class Mobile_api{
 										 ";
 					
 				
-					
+					echo '<pre>';print_r( $query  );echo '</pre>';  exit;
 					$result = mysql_query($query);
 					while ($row = mysql_fetch_assoc($result)) {
 						foreach( $row  as  $key => $value){
 							$showpage_feature[$key] = $value;
 						}
-					}echo '<pre>';print_r(  $showpage_feature  );echo '</pre>';  exit;
+					}
 					return ( isset( $showpage_feature) ? $showpage_feature:array() );
 				}
 				
