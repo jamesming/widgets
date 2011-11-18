@@ -17,7 +17,10 @@ include('mobile_class.php');
 						if( $key == 'showpage_items_image_id'){
 							$showpage['photo_iphone_3g'] = 'http://cms.mynuvotv.com/uploads/showpage_items_images/'.$value.'/image.png';
 							$showpage['photo_iphone_4g'] = 'http://cms.mynuvotv.com/uploads/showpage_items_images/'.$value.'/image@2x.png';
-						};						
+						};
+						if( $key == 'url_name'){
+							$showpage['page_link'] = 'http://mynuvotv.com/shows/'.$value;
+						};													
 					}
 
 				$showpages[]=$showpage;	

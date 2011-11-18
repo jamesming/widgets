@@ -71,6 +71,8 @@ class Mobile_api{
 											showpage_items.id as showpage_item_id,
 											showpage_items.name,
 											showpage_items.isHot,
+											showpage_items.iphone_directTo as directTo,
+											showpage_items.url_name as url_name,
 											showpage_items_images.id as showpage_items_image_id
 										 FROM 
 										 	showpage_items,
