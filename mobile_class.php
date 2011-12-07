@@ -58,7 +58,7 @@ class Mobile_api{
 										 LIMIT 0, 16
 										 	";
 										 	
-					 // LIMIT 16 =  4 shows/sets of 6 images(7,8,9,32)
+					 // LIMIT 16 =  4 shows/sets of 4 images(7,8,9,32)
 
 					$result = mysql_query($query);
 					
@@ -67,6 +67,74 @@ class Mobile_api{
 						$sets[] = $row;
 					}
 					return $sets;  
+				}
+
+
+				function get_sets_ipad(
+					$day_to_view,
+					$year_to_view,
+					$year_to_view_minus_one_year
+				){
+					$query = 	"SELECT
+											carousel_items_sets.id  AS carousel_items_sets_id,
+										 	carousel_items.name AS 	carousel_items_name,
+										 	carousel_items.iphone_directTo as directTo,
+										 	carousel_items.videoID,
+										 	carousel_items.showpage_item_id,
+										 	carousel_items.page_link,
+										 	carousel_items_images.image_type,
+										 	carousel_items_images.id AS carousel_items_image_id
+										 FROM 
+										 	carousel_sets_calendars,
+										 	carousel_sets,
+										 	carousel_items_sets,
+										 	carousel_items,
+										 	carousel_items_images
+										 WHERE
+										 	carousel_sets.id = carousel_sets_calendars.carousel_set_id
+										 AND
+										 	carousel_sets_calendars.day_of_year <= ". $day_to_view ."
+										 AND
+										 	carousel_sets_calendars.year = ". $year_to_view ."
+										 AND
+										 	carousel_items_sets.carousel_set_id = carousel_sets.id
+										 AND
+										 	carousel_items.id = carousel_items_sets.carousel_item_id
+										 AND
+										 	carousel_items_images.carousel_item_id = carousel_items.id
+										 AND
+										 	carousel_items_images.image_type_id in (33,43,46,47)
+										 OR
+										 	carousel_sets.id = carousel_sets_calendars.carousel_set_id
+										 AND
+										 	carousel_sets_calendars.day_of_year <= 365
+										 AND
+										 	carousel_sets_calendars.year = ". $year_to_view_minus_one_year ."
+										 AND
+										 	carousel_items_sets.carousel_set_id = carousel_sets.id
+										 AND
+										 	carousel_items.id = carousel_items_sets.carousel_item_id
+										 AND
+										 	carousel_items_images.carousel_item_id = carousel_items.id
+										 AND
+										 	carousel_items_images.image_type_id in (33,43,46,47)				 	
+										 ORDER BY
+										 	carousel_sets_calendars.day_of_year DESC,
+										 	carousel_items_sets.id,
+										 	carousel_items_sets.order,
+										 	carousel_items_images.image_type_id ASC
+										 LIMIT 0, 16
+										 	";
+										 	
+					 // LIMIT 16 =  4 shows/sets of 4 images(33,43,46,47)
+
+					$result = mysql_query($query);
+					
+					
+					while ($row = mysql_fetch_assoc($result)) {
+						$sets[] = $row;
+					}
+					return ( isset( $sets) ? :array() );  
 				}
 
 				function get_showpages(){
@@ -332,6 +400,47 @@ class Mobile_api{
 												$count++;
 											}
 										}				
+									};
+									
+				
+									
+									foreach( $fields  as  $field){
+										if( $key0 == $field
+										){
+											$container[$key0] =$values0;
+										};			
+									}
+									
+															
+								}
+						
+								$results[] = $container;
+								unset($container);
+						}
+						return ( isset( $results) ? $results:array() );
+				}
+				
+				
+				function prepare_iphone_array_with_more_than_one_image_type_ipad(
+					$crate,
+					$directory,
+					$image_types,
+					$fields
+				){
+					
+						foreach( ( isset( $crate) ? $crate:array() )  as $box){
+							
+								foreach(  $box as  $key0 => $values0){
+									
+									if( $key0 == 'images'){
+										$count=0;
+										foreach( $values0  as $key1 => $image_ids){ 
+											foreach( $image_ids  as  $key2 => $image_id){
+												$container[  $image_types[$count]   ] = 'http://cms.mynuvotv.com/uploads/'.$directory.'/'.$image_id.'/image.png';
+												$count++;
+											}
+										}
+		
 									};
 									
 				
