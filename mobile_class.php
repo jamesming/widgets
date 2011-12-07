@@ -381,6 +381,42 @@ class Mobile_api{
 					return ( isset( $showpage) ? $showpage:array() );
 				}
 				
+				
+				
+				
+				
+				function get_showpages_ipad(){
+					$query = 	"SELECT
+											showpage_items.id as showpage_item_id,
+											showpage_items.name,
+											showpage_items.isHot,
+											showpage_items.iphone_directTo as directTo,
+											showpage_items.url_name as url_name,
+											showpage_items_images.id as showpage_items_image_id
+										 FROM 
+										 	showpage_items,
+										 	showpage_items_images
+										 WHERE
+										 	showpage_items.id = showpage_items_images.showpage_item_id
+										 AND
+										 	showpage_items_images.image_type_id = 48
+										 ORDER BY
+										 	showpage_items.isHot desc,
+										 	showpage_items.name asc
+										 ";
+
+					$result = mysql_query($query);
+					while ($row = mysql_fetch_assoc($result)) {
+						foreach( $row  as  $key => $value){
+							$showpage[$key] = $value;
+						}
+						$showpages[]=$showpage;
+					}
+					return $showpages;
+				}
+				
+				
+				
 				/* END IPAD METHODS */
 				
 				
