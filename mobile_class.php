@@ -385,7 +385,7 @@ class Mobile_api{
 				
 				
 				
-				function get_showpages_ipad(){
+				function get_ipad_showpages(){
 					$query = 	"SELECT
 											showpage_items.id as showpage_item_id,
 											showpage_items.name,
