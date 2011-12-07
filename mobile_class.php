@@ -68,74 +68,8 @@ class Mobile_api{
 					}
 					return $sets;  
 				}
-
-
-				function get_sets_ipad(
-					$day_to_view,
-					$year_to_view,
-					$year_to_view_minus_one_year
-				){
-					$query = 	"SELECT
-											carousel_items_sets.id  AS carousel_items_sets_id,
-										 	carousel_items.name AS 	carousel_items_name,
-										 	carousel_items.iphone_directTo as directTo,
-										 	carousel_items.videoID,
-										 	carousel_items.showpage_item_id,
-										 	carousel_items.page_link,
-										 	carousel_items_images.image_type,
-										 	carousel_items_images.id AS carousel_items_image_id
-										 FROM 
-										 	carousel_sets_calendars,
-										 	carousel_sets,
-										 	carousel_items_sets,
-										 	carousel_items,
-										 	carousel_items_images
-										 WHERE
-										 	carousel_sets.id = carousel_sets_calendars.carousel_set_id
-										 AND
-										 	carousel_sets_calendars.day_of_year <= ". $day_to_view ."
-										 AND
-										 	carousel_sets_calendars.year = ". $year_to_view ."
-										 AND
-										 	carousel_items_sets.carousel_set_id = carousel_sets.id
-										 AND
-										 	carousel_items.id = carousel_items_sets.carousel_item_id
-										 AND
-										 	carousel_items_images.carousel_item_id = carousel_items.id
-										 AND
-										 	carousel_items_images.image_type_id in (33,43,46,47)
-										 OR
-										 	carousel_sets.id = carousel_sets_calendars.carousel_set_id
-										 AND
-										 	carousel_sets_calendars.day_of_year <= 365
-										 AND
-										 	carousel_sets_calendars.year = ". $year_to_view_minus_one_year ."
-										 AND
-										 	carousel_items_sets.carousel_set_id = carousel_sets.id
-										 AND
-										 	carousel_items.id = carousel_items_sets.carousel_item_id
-										 AND
-										 	carousel_items_images.carousel_item_id = carousel_items.id
-										 AND
-										 	carousel_items_images.image_type_id in (33,43,46,47)				 	
-										 ORDER BY
-										 	carousel_sets_calendars.day_of_year DESC,
-										 	carousel_items_sets.id,
-										 	carousel_items_sets.order,
-										 	carousel_items_images.image_type_id ASC
-										 LIMIT 0, 16
-										 	";
-										 	
-					 // LIMIT 16 =  4 shows/sets of 4 images(33,43,46,47)
-
-					$result = mysql_query($query);
-					
-					
-					while ($row = mysql_fetch_assoc($result)) {
-						$sets[] = $row;
-					}
-					return ( isset( $sets) ?$sets :array() );  
-				}
+				
+				
 
 				function get_showpages(){
 					$query = 	"SELECT
@@ -278,6 +212,183 @@ class Mobile_api{
 					}
 					return ( isset( $showpage) ? $showpage:array() );
 				}
+				
+				
+				
+				
+				
+				
+				/* IPAD METHODS */
+
+				function get_sets_ipad(
+					$day_to_view,
+					$year_to_view,
+					$year_to_view_minus_one_year
+				){
+					$query = 	"SELECT
+											carousel_items_sets.id  AS carousel_items_sets_id,
+										 	carousel_items.name AS 	carousel_items_name,
+										 	carousel_items.iphone_directTo as directTo,
+										 	carousel_items.videoID,
+										 	carousel_items.showpage_item_id,
+										 	carousel_items.page_link,
+										 	carousel_items_images.image_type,
+										 	carousel_items_images.id AS carousel_items_image_id
+										 FROM 
+										 	carousel_sets_calendars,
+										 	carousel_sets,
+										 	carousel_items_sets,
+										 	carousel_items,
+										 	carousel_items_images
+										 WHERE
+										 	carousel_sets.id = carousel_sets_calendars.carousel_set_id
+										 AND
+										 	carousel_sets_calendars.day_of_year <= ". $day_to_view ."
+										 AND
+										 	carousel_sets_calendars.year = ". $year_to_view ."
+										 AND
+										 	carousel_items_sets.carousel_set_id = carousel_sets.id
+										 AND
+										 	carousel_items.id = carousel_items_sets.carousel_item_id
+										 AND
+										 	carousel_items_images.carousel_item_id = carousel_items.id
+										 AND
+										 	carousel_items_images.image_type_id in (33,43,46,47)
+										 OR
+										 	carousel_sets.id = carousel_sets_calendars.carousel_set_id
+										 AND
+										 	carousel_sets_calendars.day_of_year <= 365
+										 AND
+										 	carousel_sets_calendars.year = ". $year_to_view_minus_one_year ."
+										 AND
+										 	carousel_items_sets.carousel_set_id = carousel_sets.id
+										 AND
+										 	carousel_items.id = carousel_items_sets.carousel_item_id
+										 AND
+										 	carousel_items_images.carousel_item_id = carousel_items.id
+										 AND
+										 	carousel_items_images.image_type_id in (33,43,46,47)				 	
+										 ORDER BY
+										 	carousel_sets_calendars.day_of_year DESC,
+										 	carousel_items_sets.id,
+										 	carousel_items_sets.order,
+										 	carousel_items_images.image_type_id ASC
+										 LIMIT 0, 16
+										 	";
+										 	
+					 // LIMIT 16 =  4 shows/sets of 4 images(33,43,46,47)
+
+					$result = mysql_query($query);
+					
+					
+					while ($row = mysql_fetch_assoc($result)) {
+						$sets[] = $row;
+					}
+					return ( isset( $sets) ?$sets :array() );  
+				}
+
+
+				function get_showpage_ipad($showpage_item_id){
+					$query = 	"SELECT
+											showpage_items.id as showpage_item_id,
+											showpage_items.name,
+											showpage_items.about,
+											showpage_items_images.image_type,
+											showpage_items_images.id as showpage_items_image_id
+										 FROM 
+										 	showpage_items,
+										 	showpage_items_images
+										 WHERE
+										 	showpage_items.id = $showpage_item_id
+										 AND
+										 	showpage_items.id = showpage_items_images.showpage_item_id
+										 AND
+										 	showpage_items_images.image_type_id in (37, 44, 48)
+										 ORDER BY
+										 	showpage_items_images.image_type_id
+										 ";
+					
+					$result = mysql_query($query);
+					while ($row = mysql_fetch_assoc($result)) {
+						foreach( $row  as  $key => $value){
+							$showpage[$key] = $value;
+						}
+						$showpages[] = $showpage;
+					}
+					
+					return ( isset( $showpages) ? $showpages:array() );
+				}
+				
+
+				
+				function get_iphone_gallery_photos_ipad($showpage_item_id){
+						$query = 	"SELECT
+												showpage_iphone_gallery_photo_items.id as showpage_iphone_gallery_photo_item_id,
+												showpage_iphone_gallery_photo_items.name,
+												showpage_iphone_gallery_photo_items.id as showpage_iphone_gallery_photo_item_id,
+												showpage_iphone_gallery_photo_items_images.image_type,
+												showpage_iphone_gallery_photo_items_images.id as showpage_iphone_gallery_photo_items_image_id
+											 FROM 
+											 	showpage_iphone_gallery_photo_items,
+											 	showpage_iphone_gallery_photo_items_images
+											 WHERE
+											 	showpage_iphone_gallery_photo_items.showpage_item_id = $showpage_item_id
+											 AND
+											 	showpage_iphone_gallery_photo_items.id = showpage_iphone_gallery_photo_items_images.showpage_iphone_gallery_photo_item_id
+											 AND
+											 	showpage_iphone_gallery_photo_items_images.image_type_id in (39, 40, 41, 49)
+											 ORDER BY 
+											 	showpage_iphone_gallery_photo_items.id,
+											 	showpage_iphone_gallery_photo_items_images.image_type_id
+											 ";
+						
+						$result = mysql_query($query);
+						while ($row = mysql_fetch_assoc($result)) {
+							foreach( $row  as  $key => $value){
+								$iphone_gallery_photo[$key] = $value;
+							}
+							 	$showpage[] = $iphone_gallery_photo;
+							 	
+							 	
+						}
+				return ( isset( $showpage) ? $showpage:array() );	
+				}
+				
+				function get_cast_ipad($showpage_item_id){
+					$query = 	"SELECT
+											showpage_cast_items.name,
+											showpage_cast_items.content,
+											showpage_cast_items_images.id as showpage_cast_items_image_id
+										 FROM 
+										 	showpage_cast_items,
+										 	showpage_cast_items_images
+										 WHERE
+										 	showpage_cast_items.showpage_item_id = $showpage_item_id
+										 AND
+										 	showpage_cast_items.id = showpage_cast_items_images.showpage_cast_item_id
+										 AND
+										 	showpage_cast_items_images.image_type_id in (38)
+										 ";
+
+				
+					$result = mysql_query($query);
+					while ($row = mysql_fetch_assoc($result)) {
+						foreach( $row  as  $key => $value){
+							$cast[$key] = $value;
+						}
+						 	$showpage[] = $cast;
+					}
+					return ( isset( $showpage) ? $showpage:array() );
+				}
+				
+				/* END IPAD METHODS */
+				
+				
+				
+				
+				
+				
+				
 				
 				function group_arrays_by_primary_key( 
 					$groups,  
