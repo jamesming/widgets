@@ -134,7 +134,7 @@ class Mobile_api{
 					while ($row = mysql_fetch_assoc($result)) {
 						$sets[] = $row;
 					}
-					return ( isset( $sets) ? :array() );  
+					return ( isset( $sets) ?$sets :array() );  
 				}
 
 				function get_showpages(){
