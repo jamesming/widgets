@@ -55,8 +55,11 @@ class Mobile_api{
 										 	carousel_items_sets.id,
 										 	carousel_items_sets.order,
 										 	carousel_items_images.image_type_id ASC
+										 LIMIT 0, 16
 										 	";
-					
+										 	
+					 // LIMIT 16 =  4 shows/sets of 6 images(7,8,9,32)
+
 					$result = mysql_query($query);
 					
 					
