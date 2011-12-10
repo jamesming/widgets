@@ -1,4 +1,31 @@
 <?php     
+/*
+
+
+http://localhost/widgets/get_carousel.php?date=2011-10-6&output=test
+http://widgets.mynuvotv.com/get_carousel.php?date=2011-10-6&output=test
+
+http://localhost/widgets/get_showpage.php?showpage_item_id=10
+http://widgets.mynuvotv.com/get_showpage.php?showpage_item_id=10
+
+http://localhost/widgets/get_showpages.php
+http://widgets.mynuvotv.com/get_showpages.php
+
+
+IPAD 
+http://localhost/widgets/get_ipad_carousel.php?date=2011-10-6&output=test
+http://widgets.mynuvotv.com/get_ipad_carousel.php?date=2011-10-6&output=test
+
+http://localhost/widgets/get_ipad_showpage.php?showpage_item_id=10
+http://widgets.mynuvotv.com/get_ipad_showpage.php?showpage_item_id=10
+
+http://localhost/widgets/get_ipad_showpages.php
+http://widgets.mynuvotv.com/get_ipad_showpages.php
+
+
+*/
+
+
 
 class Mobile_api{
 				
@@ -153,25 +180,26 @@ class Mobile_api{
 					return ( isset( $showpage_feature) ? $showpage_feature:array() );
 				}
 				
-				function get_iphone_gallery_photos($showpage_item_id){
+				function get_mobile_gallery_photos($showpage_item_id){
 						$query = 	"SELECT
-												showpage_iphone_gallery_photo_items.id as showpage_iphone_gallery_photo_item_id,
-												showpage_iphone_gallery_photo_items.name,
-												showpage_iphone_gallery_photo_items.id as showpage_iphone_gallery_photo_item_id,
-												showpage_iphone_gallery_photo_items_images.image_type,
-												showpage_iphone_gallery_photo_items_images.id as showpage_iphone_gallery_photo_items_image_id
+												showpage_mobile_gallery_photo_items.id as showpage_mobile_gallery_photo_item_id,
+												showpage_mobile_gallery_photo_items.name,
+												showpage_mobile_gallery_photo_items.id as showpage_mobile_gallery_photo_item_id,
+												showpage_mobile_gallery_photo_items_images.image_type,
+												showpage_mobile_gallery_photo_items_images.image_type_id,
+												showpage_mobile_gallery_photo_items_images.id as showpage_mobile_gallery_photo_items_image_id
 											 FROM 
-											 	showpage_iphone_gallery_photo_items,
-											 	showpage_iphone_gallery_photo_items_images
+											 	showpage_mobile_gallery_photo_items,
+											 	showpage_mobile_gallery_photo_items_images
 											 WHERE
-											 	showpage_iphone_gallery_photo_items.showpage_item_id = $showpage_item_id
+											 	showpage_mobile_gallery_photo_items.showpage_item_id = $showpage_item_id
 											 AND
-											 	showpage_iphone_gallery_photo_items.id = showpage_iphone_gallery_photo_items_images.showpage_iphone_gallery_photo_item_id
+											 	showpage_mobile_gallery_photo_items.id = showpage_mobile_gallery_photo_items_images.showpage_mobile_gallery_photo_item_id
 											 AND
-											 	showpage_iphone_gallery_photo_items_images.image_type_id in (23, 24, 25)
+											 	showpage_mobile_gallery_photo_items_images.image_type_id in (23, 24, 25)
 											 ORDER BY 
-											 	showpage_iphone_gallery_photo_items.id,
-											 	showpage_iphone_gallery_photo_items_images.image_type_id
+											 	showpage_mobile_gallery_photo_items.id,
+											 	showpage_mobile_gallery_photo_items_images.image_type_id
 											 ";
 						
 						$result = mysql_query($query);
@@ -321,27 +349,29 @@ class Mobile_api{
 				
 
 				
-				function get_iphone_gallery_photos_ipad($showpage_item_id){
+				function get_mobile_gallery_photos_ipad($showpage_item_id){
 						$query = 	"SELECT
-												showpage_iphone_gallery_photo_items.id as showpage_iphone_gallery_photo_item_id,
-												showpage_iphone_gallery_photo_items.name,
-												showpage_iphone_gallery_photo_items.id as showpage_iphone_gallery_photo_item_id,
-												showpage_iphone_gallery_photo_items_images.image_type,
-												showpage_iphone_gallery_photo_items_images.id as showpage_iphone_gallery_photo_items_image_id
+												showpage_mobile_gallery_photo_items.id as showpage_mobile_gallery_photo_item_id,
+												showpage_mobile_gallery_photo_items.name,
+												showpage_mobile_gallery_photo_items.id as showpage_mobile_gallery_photo_item_id,
+												showpage_mobile_gallery_photo_items_images.image_type,
+												showpage_mobile_gallery_photo_items_images.id as showpage_mobile_gallery_photo_items_image_id
 											 FROM 
-											 	showpage_iphone_gallery_photo_items,
-											 	showpage_iphone_gallery_photo_items_images
+											 	showpage_mobile_gallery_photo_items,
+											 	showpage_mobile_gallery_photo_items_images
 											 WHERE
-											 	showpage_iphone_gallery_photo_items.showpage_item_id = $showpage_item_id
+											 	showpage_mobile_gallery_photo_items.showpage_item_id = $showpage_item_id
 											 AND
-											 	showpage_iphone_gallery_photo_items.id = showpage_iphone_gallery_photo_items_images.showpage_iphone_gallery_photo_item_id
+											 	showpage_mobile_gallery_photo_items.id = showpage_mobile_gallery_photo_items_images.showpage_mobile_gallery_photo_item_id
 											 AND
-											 	showpage_iphone_gallery_photo_items_images.image_type_id in (39, 40, 41, 49)
+											 	showpage_mobile_gallery_photo_items_images.image_type_id in (39, 40, 41, 49)
 											 ORDER BY 
-											 	showpage_iphone_gallery_photo_items.id,
-											 	showpage_iphone_gallery_photo_items_images.image_type_id
+											 	showpage_mobile_gallery_photo_items.id,
+											 	showpage_mobile_gallery_photo_items_images.image_type_id
 											 ";
 						
+						
+
 						$result = mysql_query($query);
 						while ($row = mysql_fetch_assoc($result)) {
 							foreach( $row  as  $key => $value){
@@ -351,6 +381,8 @@ class Mobile_api{
 							 	
 							 	
 						}
+
+						
 				return ( isset( $showpage) ? $showpage:array() );	
 				}
 				
@@ -416,7 +448,47 @@ class Mobile_api{
 				}
 				
 				
+				function prepare_iphone_array_with_more_than_one_image_type_ipad(
+					$crate,
+					$directory,
+					$image_types,
+					$fields
+				){
+					
+
+					
+						foreach( ( isset( $crate) ? $crate : array() )  as $box){
+							
+								foreach(  $box as  $key0 => $values0){
+									
+									if( $key0 == 'images'){
+										$count=0;
+										foreach( $values0  as $key1 => $image_ids){ 
+											foreach( $image_ids  as  $key2 => $image_id){
+												$container[  $image_types[$count]   ] = 'http://cms.mynuvotv.com/uploads/'.$directory.'/'.$image_id.'/image.png';
+												$count++;
+											}
+										}
+		
+									};
+									
 				
+									
+									foreach( $fields  as  $field){
+										if( $key0 == $field
+										){
+											$container[$key0] =$values0;
+										};			
+									}
+									
+															
+								}
+						
+								$results[] = $container;
+								unset($container);
+						}
+						return ( isset( $results) ? $results:array() );
+				}	
 				/* END IPAD METHODS */
 				
 				
@@ -568,45 +640,7 @@ class Mobile_api{
 				}
 				
 				
-				function prepare_iphone_array_with_more_than_one_image_type_ipad(
-					$crate,
-					$directory,
-					$image_types,
-					$fields
-				){
-					
-						foreach( ( isset( $crate) ? $crate:array() )  as $box){
-							
-								foreach(  $box as  $key0 => $values0){
-									
-									if( $key0 == 'images'){
-										$count=0;
-										foreach( $values0  as $key1 => $image_ids){ 
-											foreach( $image_ids  as  $key2 => $image_id){
-												$container[  $image_types[$count]   ] = 'http://cms.mynuvotv.com/uploads/'.$directory.'/'.$image_id.'/image.png';
-												$count++;
-											}
-										}
-		
-									};
-									
-				
-									
-									foreach( $fields  as  $field){
-										if( $key0 == $field
-										){
-											$container[$key0] =$values0;
-										};			
-									}
-									
-															
-								}
-						
-								$results[] = $container;
-								unset($container);
-						}
-						return ( isset( $results) ? $results:array() );
-				}
+
 				
 				function output_array(
 					$array,

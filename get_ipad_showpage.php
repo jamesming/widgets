@@ -18,9 +18,9 @@ $showpage_item_id = ( isset( $_GET["showpage_item_id"]) ? $_GET["showpage_item_i
 
 				$image_types = array(
 				
-						'hero_iphone_3g',
-						'hero_android_3g',
-						'showpage_hero_mobile_thumb_3g'
+						'hero_ipad',
+						'hero_landscape_ipad',
+						'hero_mobile_thumb_ipad'
 						
 				);
 				
@@ -36,7 +36,7 @@ $showpages['show'] = ( isset($show[0] ) ?$show[0] :'' );
 $showpages['feature'] = $mobile_api->get_showpage_feature($showpage_item_id);
 
 				$casts_raw = $mobile_api->get_cast_ipad($showpage_item_id);
-				
+
 				foreach( $casts_raw  as $cast){
 								$cast = $mobile_api->prepare_iphone_array_with_one_image_type(
 																	$cast,
@@ -51,25 +51,27 @@ $showpages['feature'] = $mobile_api->get_showpage_feature($showpage_item_id);
 
 $showpages['casts'] = ( isset( $casts) ? $casts:'' );
 
-				$iphone_gallery_photos = $mobile_api->get_iphone_gallery_photos_ipad($showpage_item_id);
+				$ipad_gallery_photos = $mobile_api->get_mobile_gallery_photos_ipad($showpage_item_id);
 				
-				$iphone_gallery_photos = $mobile_api->group_arrays_by_primary_key( 
-					$groups = $iphone_gallery_photos,  
-					$primary_key = 'showpage_iphone_gallery_photo_item_id',
-					$image_key = 'showpage_iphone_gallery_photo_items_image_id'
+
+				
+				$ipad_gallery_photos = $mobile_api->group_arrays_by_primary_key( 
+					$groups = $ipad_gallery_photos,  
+					$primary_key = 'showpage_mobile_gallery_photo_item_id',
+					$image_key = 'showpage_mobile_gallery_photo_items_image_id'
 				);
 				
-				$image_types = array(
-												'photo_iphone_3g', 
-												'thumb_iphone_inactive_3g', 
-												'thumb_iphone_active_3g',
-												'photo_iphone_4g', 
-												'thumb_iphone_inactive_4g', 
-												'thumb_iphone_active_4g');
 
-$showpages['iphone_gallery_photo'] = $mobile_api->prepare_iphone_array_with_more_than_one_image_type_ipad(
-	$crate = $iphone_gallery_photos,
-	$directory = 'showpage_iphone_gallery_photo_items_images',
+				$image_types = array(
+												'ipad_landscape_photo', 
+												'ipad_thumb_active', 
+												'ipad_thumb_inactive',
+												'ipad_portrait_photo'
+												);
+
+$showpages['ipad_gallery_photo'] = $mobile_api->prepare_iphone_array_with_more_than_one_image_type_ipad(
+	$crate = $ipad_gallery_photos,
+	$directory = 'showpage_mobile_gallery_photo_items_images',
 	$image_types,
 	$fields = array()
 );
