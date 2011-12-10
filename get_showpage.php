@@ -37,15 +37,21 @@ $show = $mobile_api->prepare_iphone_array_with_more_than_one_image_type(
 
 $showpages['show'] = $show[0];
 
-$showpages['feature'] = $mobile_api->get_showpage_feature($showpage_item_id);
+//$showpages['feature'] = $mobile_api->get_showpage_feature($showpage_item_id);
 
 				$casts_raw = $mobile_api->get_cast($showpage_item_id);
+				
+
 				
 				foreach( $casts_raw  as $cast){
 								$cast = $mobile_api->prepare_iphone_array_with_one_image_type(
 																	$cast,
 																	$directory = 'showpage_cast_items_images',
-																	$image_types = array('photo_iphone_3g','photo_iphone_4g'),
+																	$image_types = array(
+																		'photo_iphone_3g',
+																		'photo_iphone_4g',
+																		'photo_ipad'
+																	),
 																	$image_id_field = 'showpage_cast_items_image_id',
 																	$fields = array('name', 'content')
 																);

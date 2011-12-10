@@ -227,7 +227,7 @@ class Mobile_api{
 										 AND
 										 	showpage_cast_items.id = showpage_cast_items_images.showpage_cast_item_id
 										 AND
-										 	showpage_cast_items_images.image_type_id in (13)
+										 	showpage_cast_items_images.image_type_id in (22)
 										 ";
 
 				
@@ -576,11 +576,14 @@ class Mobile_api{
 					$fields
 				){
 							foreach( ( isset( $array) ? $array:array() )  as $key => $value){
-								$count=0;
+
 								if( $key == $image_id_field){
-												$container[  $image_types[$count]   ] = 'http://cms.mynuvotv.com/uploads/'.$directory.'/'.$value.'/image.png';
-												$count++;
-												$container[  $image_types[$count]   ] = 'http://cms.mynuvotv.com/uploads/'.$directory.'/'.$value.'/image@2x.png';
+									
+												$container[  $image_types[0]   ] = 'http://cms.mynuvotv.com/uploads/'.$directory.'/'.$value.'/image.png';
+
+												$container[  $image_types[1]   ] = 'http://cms.mynuvotv.com/uploads/'.$directory.'/'.$value.'/image@2x.png';
+
+												$container[  $image_types[2]   ] = 'http://cms.mynuvotv.com/uploads/'.$directory.'/'.$value.'/image_ipad.png';
 								}
 								
 								foreach( $fields  as  $field){
@@ -632,11 +635,15 @@ class Mobile_api{
 									
 															
 								}
+								
+								$container['ipad_portrait_hero'] = 'test1';
+								$container['ipad_landscrape_hero'] = 'test2';
+								$container['ipad_thumb'] = 'test3';
 						
 								$results[] = $container;
 								unset($container);
 						}
-						return ( isset( $results) ? $results:array() );
+						return ( isset( $results) ? $results : array() );
 				}
 				
 				
