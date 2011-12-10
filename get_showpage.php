@@ -35,9 +35,9 @@ $show = $mobile_api->prepare_iphone_array_with_more_than_one_image_type(
 	$fields =  array('name', 'about') 
 );
 
-//$showpages['show'] = $show[0];
+$showpages['show'] = $show[0];
 
-//$showpages['feature'] = $mobile_api->get_showpage_feature($showpage_item_id);
+$showpages['feature'] = $mobile_api->get_showpage_feature($showpage_item_id);
 
 				$casts_raw = $mobile_api->get_cast($showpage_item_id);
 				
@@ -53,7 +53,7 @@ $show = $mobile_api->prepare_iphone_array_with_more_than_one_image_type(
 				}
 
 
-//$showpages['casts'] = ( isset( $casts) ? $casts:'' );
+$showpages['casts'] = ( isset( $casts) ? $casts:'' );
 
 				$iphone_gallery_photos = $mobile_api->get_mobile_gallery_photos($showpage_item_id);
 
