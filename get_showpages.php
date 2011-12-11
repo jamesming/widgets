@@ -9,6 +9,8 @@ include('mobile_class.php');
 
 				$showpages_raw = $mobile_api->get_showpages();
 				
+
+				
 				$showpages_raw = $mobile_api->group_arrays_by_primary_key( 
 					$groups = $showpages_raw,  
 					$primary_key = 'showpage_item_id',
@@ -16,11 +18,11 @@ include('mobile_class.php');
 				);
 
 
-
 				$image_types = array(
 				
-						0 => 'thumb_iphone',
-						1 => 'thumb_ipad'
+						0 => 'thumb_iphone3g',
+						1 => 'thumb_iphone4g',
+						2 => 'thumb_ipad'
 							
 				);
 				
@@ -38,8 +40,6 @@ include('mobile_class.php');
 				);
 
 
-
-				echo '<pre>';print_r(  $showpages  );echo '</pre>';  exit;
 
 				foreach( $showpages_raw as $showpage_raw){
 					

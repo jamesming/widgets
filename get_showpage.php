@@ -26,10 +26,9 @@ $showpage_item_id = ( isset( $_GET["showpage_item_id"]) ? $_GET["showpage_item_i
 						4 => 'hero_android_4g',
 						5 => 'showpage_hero_mobile_thumb_4g',
 						
-						6 => 'ipad_photo_portrait',
-						7 => 'ipad_photo_thumb_active',
-						8 => 'ipad_photo_thumb_inactive',
-						9 => 'ipad_photo_landscape'	
+						6 => 'ipad_hero_portrait',
+						7 => 'ipad_hero_landscape',
+						8 => 'ipad_hero_thumb'
 							
 				);
 				
