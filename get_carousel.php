@@ -24,11 +24,15 @@ $sets = $mobile_api->get_sets(
 	$year_to_view_minus_one_year
 );
 
+
+
 $carousel_items = $mobile_api->group_arrays_by_primary_key( 
 	$groups = $sets,  
 	$primary_key = 'carousel_items_sets_id',
 	$image_key = 'carousel_items_image_id'
 );
+
+
 
 
 	$fields = array(
@@ -41,19 +45,24 @@ $carousel_items = $mobile_api->group_arrays_by_primary_key(
 	
 	$image_types = array(
 	
-									'hero_iphone_3g', 
-									'thumb_iphone_inactive_3g', 
-									'thumb_iphone_active_3g',
-									'hero_android_3g',
+									0 => 'hero_iphone_3g', 
+									1 => 'thumb_iphone_inactive_3g', 
+									2 => 'thumb_iphone_active_3g',
+									3 => 'hero_android_3g',
 									
-									'hero_iphone_4g', 
-									'thumb_iphone_inactive_4g', 
-									'thumb_iphone_active_4g',
-									'hero_android_4g'
+									4 => 'hero_iphone_4g', 
+									5 => 'thumb_iphone_inactive_4g', 
+									6 => 'thumb_iphone_active_4g',
+									7 => 'hero_android_4g',
+									
+									8 => 'ipad_hero_portrait',
+									9 => 'ipad_hero_landscape',
+									10 => 'ipad_hero_thumb_inactive',
+									11 => 'ipad_hero_thumb_active'	
 									
 									);
 	
-$shows = $mobile_api->prepare_iphone_array_with_more_than_one_image_type(
+$shows = $mobile_api->prepare_mobile_array_for_carousel(
 	$crate = $carousel_items,
 	$directory  = 'carousel_items_images',
 	$image_types,
