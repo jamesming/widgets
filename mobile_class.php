@@ -113,7 +113,7 @@ class Mobile_api{
 										 WHERE
 										 	showpage_items.id = showpage_items_images.showpage_item_id
 										 AND
-										 	showpage_items_images.image_type_id = 30
+										 	showpage_items_images.image_type_id in (30, 48)
 										 ORDER BY
 										 	showpage_items.isHot desc,
 										 	showpage_items.name asc
@@ -180,7 +180,7 @@ class Mobile_api{
 					}
 					return ( isset( $showpage_feature) ? $showpage_feature:array() );
 				}
-				// brk
+
 				function get_mobile_gallery_photos($showpage_item_id){
 						$query = 	"SELECT
 												showpage_mobile_gallery_photo_items.id as showpage_mobile_gallery_photo_item_id,
@@ -598,7 +598,46 @@ class Mobile_api{
 					return $container;
 				}
 				
-				// brk				
+				// brk		
+				
+				function prepare_mobile_array_for_get_showpages(
+					$crate,
+					$directory,
+					$image_types,
+					$fields
+				){
+					
+						foreach( ( isset( $crate) ? $crate:array() )  as $box){
+							
+								foreach(  $box as  $key0 => $values0){
+									
+									if( $key0 == 'images'){
+										$count=0;
+
+										foreach( $values0  as $key1 => $image_ids){
+											foreach( $image_ids  as  $key2 => $image_id){
+													$container[  $image_types[$count]   ] = 'http://cms.mynuvotv.com/uploads/'.$directory.'/'.$image_id.'/image.png';
+													$count++;
+											}												
+										}
+									};
+
+									foreach( $fields  as  $field){
+										if( $key0 == $field
+										){
+											$container[$key0] =$values0;
+										};			
+									}
+					
+								}
+
+						
+								$results[] = $container;
+								unset($container);
+						}
+						return ( isset( $results) ? $results : array() );
+				}
+						
 				function prepare_mobile_array_with_more_than_one_image_type(
 					$crate,
 					$directory,
@@ -622,6 +661,7 @@ class Mobile_api{
 											
 											/*
 											$key1 < 3 represents 23, 24, 25 in showpage_mobile_gallery_photo_items_images.image_type_id in (23, 24, 25, 39, 40, 41, 49)
+											$key1 < 3 represents 11, 29, 30 in showpage_items_images.image_type_id in (11, 29, 30, 37, 44, 48)
 											*/
 											if( $key1 < 3){
 												foreach( $image_ids  as  $key2 => $image_id){
@@ -640,6 +680,7 @@ class Mobile_api{
 											
 											/*
 											$key1 < 3 represents 23, 24, 25 in showpage_mobile_gallery_photo_items_images.image_type_id in (23, 24, 25, 39, 40, 41, 49)
+											$key1 < 3 represents 11, 29, 30 in showpage_items_images.image_type_id in (11, 29, 30, 37, 44, 48)
 											*/											
 											if( $key1 < 3){											
 												foreach( $image_ids  as  $key2 => $image_id){
@@ -658,6 +699,7 @@ class Mobile_api{
 											
 											/*
 											$key1 >= 3 represents 39, 40, 41, 49 in showpage_mobile_gallery_photo_items_images.image_type_id in (23, 24, 25, 39, 40, 41, 49)
+											$key1 >= 3 represents 37, 44, 48 in showpage_items_images.image_type_id in (11, 29, 30, 37, 44, 48)
 											*/
 											if( $key1 >= 3){
 												foreach( $image_ids  as  $key2 => $image_id){
