@@ -18,17 +18,22 @@ $showpage_item_id = ( isset( $_GET["showpage_item_id"]) ? $_GET["showpage_item_i
 
 				$image_types = array(
 				
-						'hero_iphone_3g',
-						'hero_android_3g',
-						'showpage_hero_mobile_thumb_3g',	
+						0 => 'hero_iphone_3g',
+						1 => 'hero_android_3g',
+						2 => 'showpage_hero_mobile_thumb_3g',	
 											
-						'hero_iphone_4g',
-						'hero_android_4g',
-						'showpage_hero_mobile_thumb_4g'
+						3 => 'hero_iphone_4g',
+						4 => 'hero_android_4g',
+						5 => 'showpage_hero_mobile_thumb_4g',
 						
+						6 => 'ipad_photo_portrait',
+						7 => 'ipad_photo_thumb_active',
+						8 => 'ipad_photo_thumb_inactive',
+						9 => 'ipad_photo_landscape'	
+							
 				);
 				
-$show = $mobile_api->prepare_iphone_array_with_more_than_one_image_type(
+$show = $mobile_api->prepare_mobile_array_with_more_than_one_image_type(
 	$crate = $show,
 	$directory = 'showpage_items_images',
 	$image_types,
@@ -37,7 +42,7 @@ $show = $mobile_api->prepare_iphone_array_with_more_than_one_image_type(
 
 $showpages['show'] = $show[0];
 
-//$showpages['feature'] = $mobile_api->get_showpage_feature($showpage_item_id);
+$showpages['feature'] = $mobile_api->get_showpage_feature($showpage_item_id);
 
 				$casts_raw = $mobile_api->get_cast($showpage_item_id);
 				
@@ -68,16 +73,25 @@ $showpages['casts'] = ( isset( $casts) ? $casts:'' );
 					$primary_key = 'showpage_mobile_gallery_photo_item_id',
 					$image_key = 'showpage_mobile_gallery_photo_items_image_id'
 				);
-				
-				$image_types = array(
-												'photo_iphone_3g', 
-												'thumb_iphone_inactive_3g', 
-												'thumb_iphone_active_3g',
-												'photo_iphone_4g', 
-												'thumb_iphone_inactive_4g', 
-												'thumb_iphone_active_4g');
 
-$showpages['iphone_gallery_photo'] = $mobile_api->prepare_iphone_array_with_more_than_one_image_type(
+				$image_types = array(
+				
+												0 => 'photo_iphone_3g', 
+												1 => 'thumb_iphone_inactive_3g', 
+												2 => 'thumb_iphone_active_3g',
+												
+												3 => 'photo_iphone_4g', 
+												4 => 'thumb_iphone_inactive_4g', 
+												5 => 'thumb_iphone_active_4g',
+												
+												6 => 'ipad_photo_portrait',
+												7 => 'ipad_photo_thumb_active',
+												8 => 'ipad_photo_thumb_inactive',
+												9 => 'ipad_photo_landscape'
+												
+												);
+
+$showpages['iphone_gallery_photo'] = $mobile_api->prepare_mobile_array_with_more_than_one_image_type(
 	$crate = $iphone_gallery_photos,
 	$directory = 'showpage_mobile_gallery_photo_items_images',
 	$image_types,
