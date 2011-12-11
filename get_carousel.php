@@ -62,7 +62,7 @@ $carousel_items = $mobile_api->group_arrays_by_primary_key(
 									
 									);
 	
-$shows = $mobile_api->prepare_mobile_array_for_carousel(
+$shows = $mobile_api->prepare_mobile_array_with_more_than_one_image_type(
 	$crate = $carousel_items,
 	$directory  = 'carousel_items_images',
 	$image_types,
