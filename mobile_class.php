@@ -3,18 +3,15 @@
 
 
 // GET CAROUSEL
-http://localhost/widgets/get_carousel.php?date=2011-10-6&output=test
 http://widgets.mynuvotv.com/get_carousel.php?date=2011-12-11&output=test
 
 
 // GET SHOWPAGE
-http://localhost/widgets/get_showpage.php?showpage_item_id=10
 http://widgets.mynuvotv.com/get_showpage.php?showpage_item_id=10
 http://widgets.mynuvotv.com/get_showpage.php?showpage_item_id=17
 
 
 // GET SHOWPAGES
-http://localhost/widgets/get_showpages.php
 http://widgets.mynuvotv.com/get_showpages.php
 
 
