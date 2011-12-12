@@ -395,9 +395,9 @@ class Mobile_api{
 											}
 										}	
 										
-										$count=6; 
+										$count=8; 
 										/* IPAD 
-												6 => 'ipad_photo_portrait'
+												8 => 'ipad_hero_portrait'
 										*/
 										foreach( $values0  as $key1 => $image_ids){
 											
