@@ -341,6 +341,102 @@ class Mobile_api{
 				
 				// brk		
 				
+				
+
+				function prepare_mobile_array_for_carousel(
+					$crate,
+					$directory,
+					$image_types,
+					$fields
+				){
+					
+						foreach( ( isset( $crate) ? $crate:array() )  as $box){
+							
+								foreach(  $box as  $key0 => $values0){
+									
+									if( $key0 == 'images'){
+										$count=0;
+										
+										/* IPHONE 3G
+											0 => 'hero_iphone_3g', 
+											1 => 'thumb_iphone_inactive_3g', 
+											2 => 'thumb_iphone_active_3g',
+											3 => 'hero_android_3g',
+										*/
+										foreach( $values0  as $key1 => $image_ids){ 
+											
+											/*
+											$key1 < 4 represents 7, 8, 9, 32 in showpage_mobile_gallery_photo_items_images.image_type_id in (7, 8, 9, 32, 33, 43, 46, 47)
+											*/
+											if( $key1 < 4){
+												foreach( $image_ids  as  $key2 => $image_id){
+														$container[  $image_types[$count]   ] = 'http://cms.mynuvotv.com/uploads/'.$directory.'/'.$image_id.'/image.png';
+														$count++;
+												}												
+											};
+
+										}
+										/* IPHONE 4G
+											4 => 'hero_iphone_4g', 
+											5 => 'thumb_iphone_inactive_4g', 
+											6 => 'thumb_iphone_active_4g',
+											7 => 'hero_android_4g',
+										*/
+										foreach( $values0  as $key1 => $image_ids){ 
+											
+											/*
+											$key1 < 4 represents 7, 8, 9, 32 in showpage_mobile_gallery_photo_items_images.image_type_id in (7, 8, 9, 32, 33, 43, 46, 47)
+											*/											
+											if( $key1 < 4){											
+												foreach( $image_ids  as  $key2 => $image_id){
+													$container[  $image_types[$count]   ] = 'http://cms.mynuvotv.com/uploads/'.$directory.'/'.$image_id.'/image@2x.png';
+													$count++;
+												}
+											}
+										}	
+										
+										$count=6; 
+										/* IPAD 
+												6 => 'ipad_photo_portrait'
+										*/
+										foreach( $values0  as $key1 => $image_ids){
+											
+											
+											/*
+											$key1 >= 4 represents 33, 43, 46, 47 in showpage_mobile_gallery_photo_items_images.image_type_id in (7, 8, 9, 32, 33, 43, 46, 47)
+											*/
+											if( $key1 >= 4){
+												foreach( $image_ids  as  $key2 => $image_id){
+														$container[  $image_types[$count]   ] = 'http://cms.mynuvotv.com/uploads/'.$directory.'/'.$image_id.'/image.png';
+														$count++;
+												}												
+											};
+
+										}			
+									};
+									
+				
+									
+									foreach( $fields  as  $field){
+										if( $key0 == $field
+										){
+											$container[$key0] =$values0;
+										};			
+									}
+									
+															
+								}
+								
+						
+								$results[] = $container;
+								unset($container);
+						}
+						return ( isset( $results) ? $results : array() );
+				}
+				
+				
+				
+				
 				function prepare_mobile_array_for_get_showpages(
 					$crate,
 					$directory,
