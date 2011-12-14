@@ -63,6 +63,10 @@ font-weight:bold;
 <script type="text/javascript" language="Javascript">
 $(document).ready(function() { 
 	
+				$('#main_container').click(function(event) {
+					top.opener.location = '/shows/operation-osmin-s2'
+				});	
+	
 
 				if( 	 getTimeZone() == 8 	  // Pacific Coast
 						|| getTimeZone() == 5){   // Eastern
