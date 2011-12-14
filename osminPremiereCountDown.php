@@ -1,5 +1,6 @@
 <style>
 body{
+	padding:0px 0px 0px 0px;
 font-family:'Helvetica Neue', Arial, Helvetica, sans-serif;
 width:174px;		
 background:url(images/Osmin_Coundown_Banner.jpg) no-repeat;
