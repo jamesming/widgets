@@ -64,7 +64,7 @@ font-weight:bold;
 $(document).ready(function() { 
 	
 				$('#main_container').css({cursor:'pointer'}).click(function(event) {
-					opener.location = '/shows/operation-osmin-s2'
+					window.opener.location = '/shows/operation-osmin-s2';
 				});	
 	
 
