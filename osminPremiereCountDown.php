@@ -63,7 +63,7 @@ font-weight:bold;
 <script type="text/javascript" language="Javascript">
 $(document).ready(function() { 
 	
-				$('#main_container').click(function(event) {
+				$('#main_container').css({cursor:'pointer'}).click(function(event) {
 					top.opener.location = '/shows/operation-osmin-s2'
 				});	
 	
