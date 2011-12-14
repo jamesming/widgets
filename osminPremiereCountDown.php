@@ -64,6 +64,7 @@ font-weight:bold;
 $(document).ready(function() { 
 	
 				$('#main_container').css({cursor:'pointer'}).click(function(event) {
+					alert('');
 					window.opener.location = '/shows/operation-osmin-s2';
 				});	
 	
