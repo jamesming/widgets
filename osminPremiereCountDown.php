@@ -1,9 +1,16 @@
 <style>
 body{
-	padding:0px 0px 0px 0px;
+padding:0px 0px 0px 0px;
 font-family:'Helvetica Neue', Arial, Helvetica, sans-serif;
-width:174px;		
-background:url(images/Osmin_Coundown_Banner.jpg) no-repeat;
+}
+#main_container{
+    background: url("images/Osmin_Coundown_Banner.jpg") no-repeat scroll 0 0 transparent;
+    height: 258px;
+    width: 307px;
+    margin: -9px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
 }
 #timer_block{
     background: none repeat scroll 0 0 white;
@@ -89,10 +96,11 @@ return localTime.getTimezoneOffset()/60 ;
 }
 
 </script>
-	<body>
+<body>
+	<div  id='main_container'>
 		<div  id='timer_block' >
 			
-				<div  >
+				<div>
 					<span id='defaultCountdown'></span>
 				</div>
 				<div   style='clear:both;'  >
@@ -120,7 +128,7 @@ return localTime.getTimezoneOffset()/60 ;
 				</div>
 				<div  class='until '  >
 				</div>			
-		</div>
-
+		</div>			
+	</div>
 </body>
 
