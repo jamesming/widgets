@@ -114,7 +114,7 @@ class Mobile_api{
 										 ORDER BY
 										 	showpage_items.isHot desc,
 										 	showpage_items.name asc,
-										 	showpage_items_images.image_type_id desc
+										 	showpage_items_images.image_type_id asc
 										 ";
 
 					$result = mysql_query($query);
