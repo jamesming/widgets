@@ -108,7 +108,7 @@ class Mobile_api{
 										 WHERE
 										 	showpage_items.id = showpage_items_images.showpage_item_id
 										 AND
-										 	showpage_items.suppress != 0
+										 	showpage_items.suppress = 0
 										 AND
 										 	showpage_items_images.image_type_id in (30, 48)
 										 ORDER BY
