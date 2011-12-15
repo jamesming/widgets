@@ -5,19 +5,20 @@ font-family:'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
 #main_container{
     background: url("images/Osmin_Coundown_Banner.jpg") no-repeat scroll 0 0 transparent;
-    height: 258px;
-    width: 307px;
-    margin: -9px;
+    height: 250px;
+    left: 0;
+    margin: 0px;
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    width: 307px;
 }
 #timer_block{
     background: none repeat scroll 0 0 white;
     margin-left: 49px;
-    margin-top: 198px;
+    margin-top: 190px;
     padding: 9px 13px 0 17px;
     width: 168px;
+    height: 40px;
 }
 .countdown_block{
    background: none repeat scroll 0 0 black;
