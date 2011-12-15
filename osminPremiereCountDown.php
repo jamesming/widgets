@@ -13,7 +13,11 @@ font-family:'Helvetica Neue', Arial, Helvetica, sans-serif;
     width: 307px;
 }
 #timer_block{
-    background: none repeat scroll 0 0 white;
+	background:white;
+	filter:alpha(opacity=75);    /* ie  */
+	-moz-opacity:0.75;    /* old mozilla browser like netscape  */
+	-khtml-opacity: 0.75;    /* for really really old safari */
+	opacity: 0.75;    /* css standard, currently it works in most modern browsers like firefox,  */
     margin-left: 49px;
     margin-top: 190px;
     padding: 9px 13px 0 17px;
