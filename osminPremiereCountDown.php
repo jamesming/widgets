@@ -75,11 +75,11 @@ $(document).ready(function() {
 
 				if( 	 getTimeZone() == 8 	  // Pacific Coast
 						|| getTimeZone() == 5){   // Eastern
-					airtime = 21; // 9pm
+					airtime = 22; // 9pm
 				}else if(getTimeZone() == 6){ // Central
-					airtime = 20;  // 8pm
+					airtime = 21;  // 8pm
 				}else if(getTimeZone() == 7){ // Mountain
-					airtime = 19;  // 7pm
+					airtime = 20;  // 7pm
 				};
 
 				month = 0; // Should be 10 for October but javascript takes it down one number
