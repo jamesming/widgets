@@ -2,6 +2,8 @@
     
 include('db_connect.php');
 
+	echo '<pre>';print_r( $get   );echo '</pre>';  
+
 if($get['url_name'] ){
 	
 	echo '<pre>';print_r( $get   );echo '</pre>';  
