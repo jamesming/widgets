@@ -1,12 +1,9 @@
 <?php     
     
 include('db_connect.php');
-echo "test";
-	echo '<pre>';print_r( $_GET   );echo '</pre>';  
 
 if($get['url_name'] ){
 	
-	echo '<pre>';print_r( $_GET   );echo '</pre>';  
 
 		$query = 	"SELECT id
 							 FROM 
@@ -23,8 +20,10 @@ if($get['url_name'] ){
 			$showpages_items[] = $showpage_item;
 		}
 		
-		echo '<pre>';print_r(  $showpages_items  );echo '</pre>';  exit;
+		
 
 };
+
+echo $showpages_items[0][id];
 
 ?>
