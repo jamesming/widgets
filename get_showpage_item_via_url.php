@@ -20,10 +20,10 @@ if($get['url_name'] ){
 			$showpages_items[] = $showpage_item;
 		}
 		
-		
+		echo $showpages_items[0][id];
 
 };
 
-echo $showpages_items[0][id];
+
 
 ?>
