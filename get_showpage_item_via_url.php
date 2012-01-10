@@ -9,7 +9,7 @@ if($get['url_name'] ){
 							 FROM 
 							 	showpage_items
 							 WHERE
-							 	url_name = ".$_GET['url_name']."
+							 	url_name = '".$_GET['url_name']."'
 						 ";
 		
 		$result = mysql_query($query);
