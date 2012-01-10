@@ -2,17 +2,17 @@
     
 include('db_connect.php');
 echo "test";
-	echo '<pre>';print_r( $get   );echo '</pre>';  
+	echo '<pre>';print_r( $_get   );echo '</pre>';  
 
 if($get['url_name'] ){
 	
-	echo '<pre>';print_r( $get   );echo '</pre>';  
+	echo '<pre>';print_r( $_get   );echo '</pre>';  
 
 		$query = 	"SELECT id
 							 FROM 
 							 	showpage_items
 							 WHERE
-							 	url_name = ".$get['url_name']."
+							 	url_name = ".$_get['url_name']."
 						 ";
 		
 		$result = mysql_query($query);
