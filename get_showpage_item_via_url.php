@@ -1,7 +1,7 @@
 <?php     
     
 include('db_connect.php');
-
+echo "test";
 	echo '<pre>';print_r( $get   );echo '</pre>';  
 
 if($get['url_name'] ){
