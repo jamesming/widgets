@@ -3,6 +3,8 @@
 include('db_connect.php');
 
 if($get['url_name'] ){
+	
+	echo '<pre>';print_r( $get   );echo '</pre>';  
 
 		$query = 	"SELECT id
 							 FROM 
