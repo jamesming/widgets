@@ -20,7 +20,7 @@ if($_GET['url_name'] ){
 			$showpages_items[] = $showpage_item;
 		}
 		
-		echo $showpages_items[0][id];
+		echo ( count( $showpages_items) ?$showpages_items[0][id] :'0' );
 
 };
 
