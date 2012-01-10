@@ -2,7 +2,7 @@
     
 include('db_connect.php');
 
-if($get['url_name'] ){
+if($_GET['url_name'] ){
 	
 
 		$query = 	"SELECT id
