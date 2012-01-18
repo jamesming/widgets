@@ -5,7 +5,7 @@ include('db_connect.php');
 if($_GET['url_name'] ){
 	
 
-		$query = 	"SELECT id, first_video
+		$query = 	"SELECT id
 							 FROM 
 							 	showpage_items
 							 WHERE
@@ -20,7 +20,7 @@ if($_GET['url_name'] ){
 			$showpages_items[] = $showpage_item;
 		}
 		
-		echo ( count( $showpages_items) && $showpages_items[0]['$showpages_items'] !='' ? $showpages_items[0][id] :'0' );
+		echo ( count( $showpages_items) ?$showpages_items[0][id] :'0' );
 
 };
 
