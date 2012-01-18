@@ -20,7 +20,7 @@ if($_GET['url_name'] ){
 			$showpages_items[] = $showpage_item;
 		}
 		
-		echo ( count( $showpages_items) && $showpages_items[0]['$showpages_items'] !='' ? $showpages_items[0][id] :'0' );
+		echo ( count( $showpages_items) && $showpages_items[0]['first_video'] !='' ? $showpages_items[0][id] :'0' );
 
 };
 
